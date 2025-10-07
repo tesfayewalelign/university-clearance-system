@@ -1,4 +1,3 @@
-// src/middleware/auth.middleware.ts
 import type { Request, Response, NextFunction } from "express";
 import { verifyJwt } from "../utils/jwt.js";
 import prisma from "../config/db.js";
@@ -18,20 +17,20 @@ export async function authenticate(
   res: Response,
   next: NextFunction
 ) {
-  const header = req.headers.authorization;
-
-  if (!header || !header.startsWith("Bearer ")) {
-    return res
-      .status(401)
-      .json({ message: "Authorization header missing or malformed" });
-  }
-
-  const token = header.split(" ")[1];
-  if (!token) {
-    return res.status(401).json({ message: "Token missing" });
-  }
-
   try {
+    const header = req.headers.authorization;
+
+    if (!header || !header.startsWith("Bearer ")) {
+      return res
+        .status(401)
+        .json({ message: "Authorization header missing or malformed" });
+    }
+
+    const token = header.split(" ")[1];
+    if (!token) {
+      return res.status(401).json({ message: "Token missing" });
+    }
+
     const payload = verifyJwt<{ userId: number }>(token);
 
     if (!payload?.userId) {
@@ -40,6 +39,7 @@ export async function authenticate(
 
     const user = await prisma.user.findUnique({
       where: { id: payload.userId },
+      select: { id: true, email: true, role: true },
     });
 
     if (!user) {

@@ -1,4 +1,3 @@
-// src/services/user.service.ts
 import prisma from "../config/db.js";
 
 export async function createUser(

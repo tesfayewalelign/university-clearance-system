@@ -21,11 +21,12 @@ function isValidFullName(name: string): boolean {
 
 export async function signup(req: Request, res: Response) {
   try {
-    const { full_name, email, password, role } = req.body;
-    if (!full_name || !email || !password || !role) {
+    const { full_name, email, password } = req.body;
+    const role = "student";
+    if (!full_name || !email || !password) {
       return res
         .status(400)
-        .json({ message: "Full name, email,  password and role are required" });
+        .json({ message: "Full name, email and  password  are required" });
     }
     if (!isValidFullName(full_name)) {
       return res
@@ -101,97 +102,6 @@ export async function login(req: Request, res: Response) {
     return res.json({ message: "Login successful", user: safeUser, token });
   } catch (err) {
     console.error("Login error:", err);
-    return res.status(500).json({ message: "Server error" });
-  }
-}
-
-export async function getAllUsers(req: Request, res: Response) {
-  try {
-    const users = await prisma.user.findMany({
-      select: {
-        id: true,
-        full_name: true,
-        email: true,
-        role: true,
-        createdAt: true,
-      },
-    });
-    return res.json(users);
-  } catch (err) {
-    console.error("Get all users error:", err);
-    return res.status(500).json({ message: "Server error" });
-  }
-}
-
-export async function getUserById(req: Request, res: Response) {
-  try {
-    const id = Number(req.params.id);
-    const user = await prisma.user.findUnique({
-      where: { id },
-      select: {
-        id: true,
-        full_name: true,
-        email: true,
-        role: true,
-        createdAt: true,
-      },
-    });
-    if (!user) return res.status(404).json({ message: "User not found" });
-    return res.json(user);
-  } catch (err) {
-    console.error("Get user error:", err);
-    return res.status(500).json({ message: "Server error" });
-  }
-}
-
-export async function updateUser(req: Request, res: Response) {
-  try {
-    const id = Number(req.params.id);
-    const { full_name, email, password } = req.body;
-
-    const data: any = {};
-    if (full_name) {
-      if (!isValidFullName(full_name))
-        return res.status(400).json({ message: "Invalid full name" });
-      data.full_name = full_name;
-    }
-    if (email) {
-      if (!isValidEmail(email))
-        return res.status(400).json({ message: "Invalid email" });
-      data.email = email;
-    }
-    if (password) {
-      if (!isStrongPassword(password))
-        return res.status(400).json({ message: "Weak password" });
-      data.password = await hashPassword(password);
-    }
-
-    const updatedUser = await prisma.user.update({
-      where: { id },
-      data,
-      select: {
-        id: true,
-        full_name: true,
-        email: true,
-        role: true,
-        createdAt: true,
-      },
-    });
-
-    return res.json({ message: "User updated", user: updatedUser });
-  } catch (err) {
-    console.error("Update user error:", err);
-    return res.status(500).json({ message: "Server error" });
-  }
-}
-
-export async function deleteUser(req: Request, res: Response) {
-  try {
-    const id = Number(req.params.id);
-    await prisma.user.delete({ where: { id } });
-    return res.json({ message: "User deleted successfully" });
-  } catch (err) {
-    console.error("Delete user error:", err);
     return res.status(500).json({ message: "Server error" });
   }
 }

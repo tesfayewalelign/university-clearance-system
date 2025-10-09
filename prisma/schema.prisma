@@ -27,7 +27,7 @@ model Department {
 model ClearanceRequest {
   id           Int      @id @default(autoincrement())
   student_id   Int
-  overall_status String  @default("Pending")
+  overall_status String  @default("Pending") // pending | approved | rejected
   createdAt    DateTime @default(now())
   student User @relation("StudentClearances", fields: [student_id], references: [id])
   departmentStatuses DepartmentClearanceStatus[]

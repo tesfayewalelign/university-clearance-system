@@ -1,46 +1,49 @@
-
 generator client {
   provider = "prisma-client-js"
-
 }
 
 datasource db {
-  provider = "mysql"
-  url   = env("DATABASE_URL")
+  provider          = "mysql"
+  url               = env("DATABASE_URL")
   shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
+
 model User {
-  id        Int      @id @default(autoincrement())
-  full_name String
-  email     String   @unique
-  password  String
-  role      String
-  createdAt DateTime @default(now())
-  clearanceRequests ClearanceRequest[] @relation("StudentClearances")
+  id                Int                @id @default(autoincrement())
+  full_name         String
+  email             String             @unique
+  password          String
+  role              String
+  departmentId      Int?
+  department        Department?        @relation(fields: [departmentId], references: [id], name: "UserDepartment")
+  studentClearances ClearanceRequest[] @relation("StudentClearances")
 }
 
 model Department {
-  id   Int    @id @default(autoincrement())
-  name String @unique
+  id                          Int                         @id @default(autoincrement())
+  name                        String                      @unique
+  users                       User[]                      @relation("UserDepartment")
   departmentClearanceStatuses DepartmentClearanceStatus[]
 }
+
 model ClearanceRequest {
-  id           Int      @id @default(autoincrement())
-  student_id   Int
-  overall_status String  @default("Pending") // pending | approved | rejected
-  createdAt    DateTime @default(now())
-  student User @relation("StudentClearances", fields: [student_id], references: [id])
+  id                 Int                         @id @default(autoincrement())
+  student_id         Int
+  overall_status     String                      @default("Pending") // pending | approved | rejected
+  createdAt          DateTime                    @default(now())
+  student            User                        @relation("StudentClearances", fields: [student_id], references: [id])
   departmentStatuses DepartmentClearanceStatus[]
 
-  @@index([student_id]) 
+  @@index([student_id])
 }
+
 model DepartmentClearanceStatus {
   id                   Int      @id @default(autoincrement())
-  clearance_request_id  Int
-  department_id         Int
-  status                String   @default("Pending")
-  comment               String?  // optional
-  updated_at            DateTime @default(now()) @updatedAt
+  clearance_request_id Int
+  department_id        Int
+  status               String   @default("Pending")
+  comment              String? // optional
+  updated_at           DateTime @default(now()) @updatedAt
 
   clearanceRequest ClearanceRequest @relation(fields: [clearance_request_id], references: [id])
   department       Department       @relation(fields: [department_id], references: [id])

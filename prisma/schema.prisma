@@ -7,13 +7,23 @@ datasource db {
   url               = env("DATABASE_URL")
   shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
+enum Role {
+  STUDENT
+  ADMIN
+  SUPER_ADMIN
+  DEPARTMENT
+  CLEARANCE_OFFICER
+  POLICE_OFFICER
+  LIBRARY_OFFICER
+}
+
 
 model User {
   id                Int                @id @default(autoincrement())
   full_name         String
   email             String             @unique
   password          String
-  role              String
+  role              Role
   departmentId      Int?
   department        Department?        @relation(fields: [departmentId], references: [id], name: "UserDepartment")
   studentClearances ClearanceRequest[] @relation("StudentClearances")

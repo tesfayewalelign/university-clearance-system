@@ -2,20 +2,13 @@ import dotenv from "dotenv";
 dotenv.config();
 import express from "express";
 import prisma from "./config/db.js";
-import departmentRoutes from "./routes/department.routes.js";
-import authRoutes from "./routes/auth.routes.js";
-import clearanceRequestRoutes from "./routes/clearanceRequest.routes.js";
-import departmentClearanceRoutes from "./routes/departmentClearance.routes.js";
+import routes from "./routes/index.js";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
-app.use("/departments", departmentRoutes);
-app.use("/api/auth", authRoutes);
-app.use("/api/clearance", clearanceRequestRoutes);
-
-app.use("/api/department-clearance", departmentClearanceRoutes);
+app.use(routes);
 
 app.get("/test-db", async (req, res) => {
   try {

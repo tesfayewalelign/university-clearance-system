@@ -1,107 +1,79 @@
 import type { Request, Response } from "express";
+import { signupSchema, loginSchema } from "../validators/auth.validator.js";
 import prisma from "../config/db.js";
-import { hashPassword, comparePasswords } from "../utils/password.js";
-import { signJwt } from "../utils/jwt.js";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
-function isValidEmail(email: string): boolean {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
-}
-
-function isStrongPassword(password: string): boolean {
-  const passwordRegex =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-  return passwordRegex.test(password);
-}
-
-function isValidFullName(name: string): boolean {
-  const nameRegex = /^[A-Za-z\s]{3,}$/;
-  return nameRegex.test(name);
-}
+const JWT_SECRET = process.env.JWT_SECRET || "your_jwt_secret_key";
 
 export async function signup(req: Request, res: Response) {
   try {
-    const { full_name, email, password } = req.body;
-    const role = "student";
-    if (!full_name || !email || !password) {
-      return res
-        .status(400)
-        .json({ message: "Full name, email and  password  are required" });
+    const parsedData = signupSchema.safeParse(req.body);
+    if (!parsedData.success) {
+      return res.status(400).json({ errors: parsedData.error.issues });
     }
-    if (!isValidFullName(full_name)) {
-      return res
-        .status(400)
-        .json({ message: "Full name must contain only letters and spaces" });
-    }
-    if (!isValidEmail(email)) {
-      return res.status(400).json({ message: "Invalid email format" });
-    }
-    if (!isStrongPassword(password)) {
-      return res.status(400).json({
-        message:
-          "Password must be at least 8 characters and include uppercase, lowercase, number, and special character",
-      });
-    }
-    const existing = await prisma.user.findUnique({ where: { email } });
-    if (existing)
-      return res.status(409).json({ message: "Email already in use" });
 
-    const hashed = await hashPassword(password);
+    const { full_name, email, password } = parsedData.data;
+
+    const existingUser = await prisma.user.findUnique({ where: { email } });
+    if (existingUser) {
+      return res.status(400).json({ message: "Email already exists" });
+    }
+
+    const hashedPassword = await bcrypt.hash(password, 10);
 
     const user = await prisma.user.create({
-      data: { full_name, email, password: hashed, role: "student" },
-      select: {
-        id: true,
-        full_name: true,
-        email: true,
-        role: true,
-        createdAt: true,
-      },
+      data: { full_name, email, password: hashedPassword },
     });
-
-    const token = signJwt({ userId: user.id });
 
     return res
       .status(201)
-      .json({ message: "User registered successfully", user, token });
-  } catch (err) {
-    console.error("Signup error:", err);
+      .json({ message: "User registered successfully", user });
+  } catch (error) {
+    console.error("Signup error:", error);
     return res.status(500).json({ message: "Server error" });
   }
 }
 
 export async function login(req: Request, res: Response) {
   try {
-    const { email, password } = req.body;
-    if (!email || !password) {
-      return res
-        .status(400)
-        .json({ message: "Email and password are required" });
+    const parsedData = loginSchema.safeParse(req.body);
+    if (!parsedData.success) {
+      return res.status(400).json({ errors: parsedData.error.issues });
     }
-    if (!isValidEmail(email)) {
-      return res.status(400).json({ message: "Invalid email format" });
-    }
+
+    const { email, password } = parsedData.data;
 
     const user = await prisma.user.findUnique({ where: { email } });
-    if (!user) return res.status(401).json({ message: "Invalid credentials" });
+    if (!user) {
+      return res.status(400).json({ message: "Invalid email or password" });
+    }
 
-    const isMatch = await comparePasswords(password, user.password);
-    if (!isMatch)
-      return res.status(401).json({ message: "Invalid credentials" });
+    const isPasswordValid = await bcrypt.compare(password, user.password);
+    if (!isPasswordValid) {
+      return res.status(400).json({ message: "Invalid email or password" });
+    }
 
-    const token = signJwt({ userId: user.id });
+    const token = jwt.sign(
+      { id: user.id, role: user.role, email: user.email },
+      JWT_SECRET,
+      {
+        expiresIn: "7d",
+      }
+    );
 
-    const safeUser = {
-      id: user.id,
-      full_name: user.full_name,
-      email: user.email,
-      role: user.role,
-      createdAt: user.createdAt,
-    };
-
-    return res.json({ message: "Login successful", user: safeUser, token });
-  } catch (err) {
-    console.error("Login error:", err);
+    return res.status(200).json({
+      message: "Login successful",
+      token,
+      user: {
+        id: user.id,
+        full_name: user.full_name,
+        email: user.email,
+        role: user.role,
+      },
+    });
+  } catch (error) {
+    console.error("Login error:", error);
     return res.status(500).json({ message: "Server error" });
   }
 }

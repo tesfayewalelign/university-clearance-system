@@ -1,6 +1,7 @@
 import type { Request, Response, NextFunction } from "express";
 import { verifyJwt } from "../utils/jwt.js";
 import prisma from "../config/db.js";
+import logger from "../utils/logger.js";
 
 declare module "express-serve-static-core" {
   interface Request {
@@ -21,6 +22,7 @@ export async function authenticate(
     const header = req.headers.authorization;
 
     if (!header || !header.startsWith("Bearer ")) {
+      logger.warn("Authorization header missing or malformed");
       return res
         .status(401)
         .json({ message: "Authorization header missing or malformed" });
@@ -28,21 +30,23 @@ export async function authenticate(
 
     const token = header.split(" ")[1];
     if (!token) {
+      logger.warn("Token missing in authorization header");
       return res.status(401).json({ message: "Token missing" });
     }
+    const payload = verifyJwt<{ id: number; role: string }>(token);
 
-    const payload = verifyJwt<{ userId: number }>(token);
-
-    if (!payload?.userId) {
+    if (!payload?.id || !payload?.role) {
+      logger.warn("Invalid JWT payload");
       return res.status(401).json({ message: "Invalid token payload" });
     }
 
     const user = await prisma.user.findUnique({
-      where: { id: payload.userId },
+      where: { id: payload.id },
       select: { id: true, email: true, role: true },
     });
 
     if (!user) {
+      logger.warn(`User not found for token userId: ${payload.id}`);
       return res.status(401).json({ message: "User not found" });
     }
 
@@ -52,9 +56,12 @@ export async function authenticate(
       role: user.role,
     };
 
+    logger.info(`Authenticated user: ${user.email} (Role: ${user.role})`);
     next();
-  } catch (error) {
-    console.error("JWT verification failed:", error);
+  } catch (error: any) {
+    logger.error(
+      `JWT verific const role: Role = roleStr as Role;ation failed: ${error.message}`
+    );
     return res.status(401).json({ message: "Invalid or expired token" });
   }
 }

@@ -1,0 +1,326 @@
+[2025-10-12 02:29:48] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-12 02:29:48] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-12 02:36:02] [33mwarn[39m: [33mInvalid signup data received[39m
+[2025-10-12 02:36:34] [33mwarn[39m: [33mInvalid signup data received[39m
+[2025-10-12 02:36:35] [33mwarn[39m: [33mInvalid signup data received[39m
+[2025-10-12 02:36:51] [33mwarn[39m: [33mInvalid signup data received[39m
+[2025-10-12 02:36:52] [33mwarn[39m: [33mInvalid signup data received[39m
+[2025-10-12 02:37:32] [31merror[39m: [31mSignup error: [39m
+[31mInvalid `prisma.user.create()` invocation in[39m
+[31m/home/tesfaye/clearance-portal/src/controllers/ auth.controller.ts:30:36[39m
+
+[31m  27 [39m
+[31m  28 const hashedPassword = await bcrypt.hash(password, 10);[39m
+[31m  29 [39m
+[31m→ 30 const user = await prisma.user.create({[39m
+[31m       data: {[39m
+[31m         full_name: "besukal",[39m
+[31m         email: "besukalgetahun2@gmail.com",[39m
+[31m         password: "$2b$10$RoPc9OGIax60/myTXpqlYuc62JD1eBaM2uNdksNnzHEETNiHX5LUS",[39m
+[31m         role: "admin"[39m
+[31m               ~~~~~~~[39m
+[31m       }[39m
+[31m     })[39m
+
+[31mInvalid value for argument `role`. Expected Role.[39m
+[2025-10-12 02:38:00] [31merror[39m: [31mSignup error: [39m
+[31mInvalid `prisma.user.create()` invocation in[39m
+[31m/home/tesfaye/clearance-portal/src/controllers/ auth.controller.ts:30:36[39m
+
+[31m  27 [39m
+[31m  28 const hashedPassword = await bcrypt.hash(password, 10);[39m
+[31m  29 [39m
+[31m→ 30 const user = await prisma.user.create({[39m
+[31m       data: {[39m
+[31m         full_name: "besukal",[39m
+[31m         email: "besukalgetahun2@gmail.com",[39m
+[31m         password: "$2b$10$IbEhrc/QVem1dM6lkio6Jem7N94f.5ijga7rGQMWbqMzd7Jlp7d5m",[39m
+[31m         role: "student"[39m
+[31m               ~~~~~~~~~[39m
+[31m       }[39m
+[31m     })[39m
+
+[31mInvalid value for argument `role`. Expected Role.[39m
+[2025-10-12 02:38:02] [31merror[39m: [31mSignup error: [39m
+[31mInvalid `prisma.user.create()` invocation in[39m
+[31m/home/tesfaye/clearance-portal/src/controllers/ auth.controller.ts:30:36[39m
+
+[31m  27 [39m
+[31m  28 const hashedPassword = await bcrypt.hash(password, 10);[39m
+[31m  29 [39m
+[31m→ 30 const user = await prisma.user.create({[39m
+[31m       data: {[39m
+[31m         full_name: "besukal",[39m
+[31m         email: "besukalgetahun2@gmail.com",[39m
+[31m         password: "$2b$10$HFkugsjpcPhvLiFbP3eg9eh4DZcvCVr9LuxgM42Aw2MyzAe6wVhQ.",[39m
+[31m         role: "student"[39m
+[31m               ~~~~~~~~~[39m
+[31m       }[39m
+[31m     })[39m
+
+[31mInvalid value for argument `role`. Expected Role.[39m
+[2025-10-12 02:40:39] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-12 02:40:39] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-12 02:40:57] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-12 02:40:57] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-12 02:41:07] [31merror[39m: [31mSignup error: [39m
+[31mInvalid `prisma.user.create()` invocation in[39m
+[31m/home/tesfaye/clearance-portal/src/controllers/ auth.controller.ts:30:36[39m
+
+[31m  27 [39m
+[31m  28 const hashedPassword = await bcrypt.hash(password, 10);[39m
+[31m  29 [39m
+[31m→ 30 const user = await prisma.user.create({[39m
+[31m       data: {[39m
+[31m         full_name: "besukal",[39m
+[31m         email: "besukalgetahun2@gmail.com",[39m
+[31m         password: "$2b$10$cCrX37imMWtZezdTKDEF7uAqaXL2gLdhYiJytoPMyeh.QXiASUBLS",[39m
+[31m         role: "student"[39m
+[31m               ~~~~~~~~~[39m
+[31m       }[39m
+[31m     })[39m
+
+[31mInvalid value for argument `role`. Expected Role.[39m
+[2025-10-12 02:41:25] [33mwarn[39m: [33mInvalid signup data received[39m
+[2025-10-12 02:41:54] [33mwarn[39m: [33mInvalid signup data received[39m
+[2025-10-12 02:41:56] [33mwarn[39m: [33mInvalid signup data received[39m
+[2025-10-12 02:42:19] [31merror[39m: [31mSignup error: [39m
+[31mInvalid `prisma.user.create()` invocation in[39m
+[31m/home/tesfaye/clearance-portal/src/controllers/ auth.controller.ts:30:36[39m
+
+[31m  27 [39m
+[31m  28 const hashedPassword = await bcrypt.hash(password, 10);[39m
+[31m  29 [39m
+[31m→ 30 const user = await prisma.user.create({[39m
+[31m       data: {[39m
+[31m         full_name: "besukal",[39m
+[31m         email: "besukalgetahun2@gmail.com",[39m
+[31m         password: "$2b$10$bDUup9ZCLlADk8CcwDDE8eX1aQll2I56IYctL/b0VRL8g607JZMB.",[39m
+[31m         role: "admin"[39m
+[31m               ~~~~~~~[39m
+[31m       }[39m
+[31m     })[39m
+
+[31mInvalid value for argument `role`. Expected Role.[39m
+[2025-10-12 02:42:21] [31merror[39m: [31mSignup error: [39m
+[31mInvalid `prisma.user.create()` invocation in[39m
+[31m/home/tesfaye/clearance-portal/src/controllers/ auth.controller.ts:30:36[39m
+
+[31m  27 [39m
+[31m  28 const hashedPassword = await bcrypt.hash(password, 10);[39m
+[31m  29 [39m
+[31m→ 30 const user = await prisma.user.create({[39m
+[31m       data: {[39m
+[31m         full_name: "besukal",[39m
+[31m         email: "besukalgetahun2@gmail.com",[39m
+[31m         password: "$2b$10$fn7.k67PgZz/GoxLS8r5ze0rgxFYsjnd07GCk5ePE7TAqNUwdVNuW",[39m
+[31m         role: "admin"[39m
+[31m               ~~~~~~~[39m
+[31m       }[39m
+[31m     })[39m
+
+[31mInvalid value for argument `role`. Expected Role.[39m
+[2025-10-12 02:43:09] [32minfo[39m: [32mLogin successful for user: tesfayewalelign44@gmail.com[39m
+[2025-10-12 02:43:34] [31merror[39m: [31mSignup error: [39m
+[31mInvalid `prisma.user.create()` invocation in[39m
+[31m/home/tesfaye/clearance-portal/src/controllers/ auth.controller.ts:30:36[39m
+
+[31m  27 [39m
+[31m  28 const hashedPassword = await bcrypt.hash(password, 10);[39m
+[31m  29 [39m
+[31m→ 30 const user = await prisma.user.create({[39m
+[31m       data: {[39m
+[31m         full_name: "besukal",[39m
+[31m         email: "besukalgetahun2@gmail.com",[39m
+[31m         password: "$2b$10$tTQSzMwqVT6D7mTkU0k5duS/T0Jzen/KMofZXBrQa/F7jXGmqWCSS",[39m
+[31m         role: "admin"[39m
+[31m               ~~~~~~~[39m
+[31m       }[39m
+[31m     })[39m
+
+[31mInvalid value for argument `role`. Expected Role.[39m
+[2025-10-12 02:46:26] [33mwarn[39m: [33mInvalid signup data received[39m
+[2025-10-12 02:46:27] [33mwarn[39m: [33mInvalid signup data received[39m
+[2025-10-12 02:46:29] [33mwarn[39m: [33mInvalid signup data received[39m
+[2025-10-12 02:46:39] [33mwarn[39m: [33mInvalid signup data received[39m
+[2025-10-12 02:47:55] [33mwarn[39m: [33mInvalid signup data received[39m
+[2025-10-12 02:50:22] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-12 02:50:22] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-12 02:50:34] [33mwarn[39m: [33mInvalid signup data received[39m
+[2025-10-12 02:50:57] [33mwarn[39m: [33mInvalid signup data received[39m
+[2025-10-12 02:51:21] [32minfo[39m: [32mNew user registered successfully: besukalgetahun2@gmail.com[39m
+[2025-10-12 02:53:47] [32minfo[39m: [32mNew user registered successfully: besukalgetahun4@gmail.com[39m
+[2025-10-12 02:58:47] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-12 02:58:47] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-12 02:59:03] [32minfo[39m: [32mNew user registered successfully: besukalgetahun12@gmail.com[39m
+[2025-10-12 02:59:26] [33mwarn[39m: [33mInvalid signup data received[39m
+[2025-10-12 03:03:24] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-12 03:03:24] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-12 03:03:29] [32minfo[39m: [32mNew user registered successfully: besukalgetahun13@gmail.com[39m
+[2025-10-12 03:20:30] [32minfo[39m: [32mLogin successful for user: tesfayewalelign2@gmail.com[39m
+[2025-10-12 03:21:07] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: ADMIN)[39m
+[2025-10-12 03:21:07] [32minfo[39m: [32mDepartment created successfully[39m
+[2025-10-12 03:21:34] [33mwarn[39m: [33mAuthorization header missing or malformed[39m
+[2025-10-12 03:21:39] [33mwarn[39m: [33mAuthorization header missing or malformed[39m
+[2025-10-12 03:21:43] [33mwarn[39m: [33mAuthorization header missing or malformed[39m
+[2025-10-12 03:21:51] [32minfo[39m: [32mFetched all departments successfully[39m
+[2025-10-12 03:22:23] [33mwarn[39m: [33mAuthorization header missing or malformed[39m
+[2025-10-12 03:22:24] [33mwarn[39m: [33mAuthorization header missing or malformed[39m
+[2025-10-12 03:23:19] [32minfo[39m: [32mLogin successful for user: tesfayewalelign44@gmail.com[39m
+[2025-10-12 03:24:30] [33mwarn[39m: [33mInvalid JWT payload[39m
+[2025-10-12 03:24:32] [33mwarn[39m: [33mInvalid JWT payload[39m
+[2025-10-12 03:24:42] [33mwarn[39m: [33mAuthorization header missing or malformed[39m
+[2025-10-12 03:25:30] [32minfo[39m: [32mLogin successful for user: tesfayewalelign2@gmail.com[39m
+[2025-10-12 03:26:03] [32minfo[39m: [32mLogin successful for user: tesfayewalelign44@gmail.com[39m
+[2025-10-12 03:26:40] [33mwarn[39m: [33mInvalid login data received[39m
+[2025-10-12 03:27:01] [33mwarn[39m: [33mInvalid JWT payload[39m
+[2025-10-12 03:27:02] [33mwarn[39m: [33mInvalid JWT payload[39m
+[2025-10-12 03:27:03] [33mwarn[39m: [33mInvalid JWT payload[39m
+[2025-10-12 03:27:04] [33mwarn[39m: [33mInvalid JWT payload[39m
+[2025-10-12 03:27:04] [33mwarn[39m: [33mInvalid JWT payload[39m
+[2025-10-12 03:27:04] [33mwarn[39m: [33mInvalid JWT payload[39m
+[2025-10-12 03:27:04] [33mwarn[39m: [33mInvalid JWT payload[39m
+[2025-10-12 03:27:05] [33mwarn[39m: [33mInvalid JWT payload[39m
+[2025-10-12 03:28:19] [32minfo[39m: [32mLogin successful for user: tesfayewalelign44@gmail.com[39m
+[2025-10-12 03:29:07] [33mwarn[39m: [33mInvalid JWT payload[39m
+[2025-10-12 03:29:19] [33mwarn[39m: [33mInvalid JWT payload[39m
+[2025-10-12 03:29:19] [33mwarn[39m: [33mInvalid JWT payload[39m
+[2025-10-12 03:29:19] [33mwarn[39m: [33mInvalid JWT payload[39m
+[2025-10-12 03:29:19] [33mwarn[39m: [33mInvalid JWT payload[39m
+[2025-10-12 03:29:19] [33mwarn[39m: [33mInvalid JWT payload[39m
+[2025-10-12 03:29:20] [33mwarn[39m: [33mInvalid JWT payload[39m
+[2025-10-12 03:29:20] [33mwarn[39m: [33mInvalid JWT payload[39m
+[2025-10-12 03:29:21] [33mwarn[39m: [33mInvalid JWT payload[39m
+[2025-10-12 03:29:21] [33mwarn[39m: [33mInvalid JWT payload[39m
+[2025-10-12 03:29:22] [33mwarn[39m: [33mInvalid JWT payload[39m
+[2025-10-12 03:29:22] [33mwarn[39m: [33mInvalid JWT payload[39m
+[2025-10-12 03:29:23] [33mwarn[39m: [33mInvalid JWT payload[39m
+[2025-10-12 03:29:23] [33mwarn[39m: [33mInvalid JWT payload[39m
+[2025-10-12 03:29:24] [33mwarn[39m: [33mInvalid JWT payload[39m
+[2025-10-12 03:30:24] [33mwarn[39m: [33mInvalid JWT payload[39m
+[2025-10-12 03:30:33] [33mwarn[39m: [33mAuthorization header missing or malformed[39m
+[2025-10-12 03:30:34] [33mwarn[39m: [33mAuthorization header missing or malformed[39m
+[2025-10-12 03:30:51] [32minfo[39m: [32mFetched all departments successfully[39m
+[2025-10-12 03:40:49] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-12 03:40:49] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-12 03:41:49] [32minfo[39m: [32mLogin successful for user: tesfayewalelign44@gmail.com[39m
+[2025-10-12 03:42:46] [33mwarn[39m: [33mInvalid JWT payload[39m
+[2025-10-12 03:46:27] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-12 03:46:27] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-12 03:50:27] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-12 03:50:27] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-12 03:50:30] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-12 03:50:30] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-12 03:50:32] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-12 03:50:32] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-12 03:50:34] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-12 03:50:34] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-12 03:50:35] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-12 03:50:35] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-12 03:50:37] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-12 03:50:37] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-12 03:53:38] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-12 03:53:38] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-12 03:54:03] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-12 03:54:03] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-12 03:54:26] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-12 03:54:26] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-12 03:54:35] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: ADMIN)[39m
+[2025-10-12 03:54:35] [31merror[39m: [31mFailed to create department: [39m
+[31mInvalid `prisma.department.create()` invocation in[39m
+[31m/home/tesfaye/clearance-portal/src/services/department.service.ts:4:28[39m
+
+[31m  1 import prisma from "../config/db.js";[39m
+[31m  2 [39m
+[31m  3 export const createDepartment = async (data: any) => {[39m
+[31m→ 4   return prisma.department.create({[39m
+[31m        data: {[39m
+[31m          name: "Computer Science",[39m
+[31m          description: "CS Department",[39m
+[31m          ~~~~~~~~~~~[39m
+[31m      ?   users?: UserCreateNestedManyWithoutDepartmentInput,[39m
+[31m      ?   departmentClearanceStatuses?: DepartmentClearanceStatusCreateNestedManyWithoutDepartmentInput[39m
+[31m        }[39m
+[31m      })[39m
+
+[31mUnknown argument `description`. Available options are marked with ?.[39m
+[2025-10-12 03:54:38] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: ADMIN)[39m
+[2025-10-12 03:54:38] [31merror[39m: [31mFailed to create department: [39m
+[31mInvalid `prisma.department.create()` invocation in[39m
+[31m/home/tesfaye/clearance-portal/src/services/department.service.ts:4:28[39m
+
+[31m  1 import prisma from "../config/db.js";[39m
+[31m  2 [39m
+[31m  3 export const createDepartment = async (data: any) => {[39m
+[31m→ 4   return prisma.department.create({[39m
+[31m        data: {[39m
+[31m          name: "Computer Science",[39m
+[31m          description: "CS Department",[39m
+[31m          ~~~~~~~~~~~[39m
+[31m      ?   users?: UserCreateNestedManyWithoutDepartmentInput,[39m
+[31m      ?   departmentClearanceStatuses?: DepartmentClearanceStatusCreateNestedManyWithoutDepartmentInput[39m
+[31m        }[39m
+[31m      })[39m
+
+[31mUnknown argument `description`. Available options are marked with ?.[39m
+[2025-10-12 03:55:50] [32minfo[39m: [32mLogin successful for user: tesfayewalelign44@gmail.com[39m
+[2025-10-12 03:56:35] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: ADMIN)[39m
+[2025-10-12 03:56:35] [32minfo[39m: [32mDepartment created successfully[39m
+[2025-10-12 03:57:04] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: ADMIN)[39m
+[2025-10-12 03:57:04] [32minfo[39m: [32mDepartment updated successfully: ID 10[39m
+[2025-10-12 03:57:11] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: ADMIN)[39m
+[2025-10-12 03:57:11] [31merror[39m: [31mFailed to update department: [39m
+[31mInvalid `prisma.department.update()` invocation in[39m
+[31m/home/tesfaye/clearance-portal/src/services/department.service.ts:12:28[39m
+
+[31m   9 };[39m
+[31m  10 [39m
+[31m  11 export const updateDepartment = async (id: number, data: any) => {[39m
+[31m→ 12   return prisma.department.update([39m
+[31mUnique constraint failed on the constraint: `Department_name_key`[39m
+[2025-10-12 03:57:20] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: ADMIN)[39m
+[2025-10-12 03:57:20] [32minfo[39m: [32mDepartment updated successfully: ID 10[39m
+[2025-10-12 03:57:26] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: ADMIN)[39m
+[2025-10-12 03:57:26] [32minfo[39m: [32mDepartment deleted successfully: ID 10[39m
+[2025-10-12 03:57:42] [32minfo[39m: [32mFetched all departments successfully[39m
+[2025-10-12 04:27:01] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-12 04:27:01] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-12 04:30:38] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-12 04:30:38] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-12 04:30:48] [33mwarn[39m: [33mAuthorization header missing or malformed[39m
+[2025-10-12 04:30:52] [33mwarn[39m: [33mAuthorization header missing or malformed[39m
+[2025-10-12 04:30:53] [33mwarn[39m: [33mAuthorization header missing or malformed[39m
+[2025-10-12 04:31:45] [33mwarn[39m: [33mAuthorization header missing or malformed[39m
+[2025-10-12 04:31:46] [33mwarn[39m: [33mAuthorization header missing or malformed[39m
+[2025-10-12 04:33:05] [32minfo[39m: [32mLogin successful for user: tesfayewalelign44@gmail.com[39m
+[2025-10-12 04:34:26] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: ADMIN)[39m
+[2025-10-12 04:34:32] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: ADMIN)[39m
+[2025-10-12 04:34:34] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: ADMIN)[39m
+[2025-10-12 04:35:18] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-12 04:35:18] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-12 04:35:25] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: ADMIN)[39m
+[2025-10-12 04:35:26] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: ADMIN)[39m
+[2025-10-12 04:35:27] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: ADMIN)[39m
+[2025-10-12 04:35:28] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: ADMIN)[39m
+[2025-10-12 04:35:28] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: ADMIN)[39m
+[2025-10-12 04:35:29] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: ADMIN)[39m
+[2025-10-12 04:35:29] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: ADMIN)[39m
+[2025-10-12 04:37:30] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-12 04:37:30] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-12 04:37:33] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-12 04:37:33] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-12 04:37:35] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: ADMIN)[39m
+[2025-10-12 04:37:37] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: ADMIN)[39m
+[2025-10-12 04:39:58] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-12 04:39:58] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-12 04:41:34] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-12 04:41:34] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-12 04:42:17] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-12 04:42:17] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-12 04:42:28] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: ADMIN)[39m
+[2025-10-12 04:45:53] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-12 04:45:53] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-12 04:46:22] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: ADMIN)[39m
+[2025-10-12 04:46:30] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: ADMIN)[39m
+[2025-10-12 04:46:32] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: ADMIN)[39m
+[2025-10-12 04:47:54] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: ADMIN)[39m

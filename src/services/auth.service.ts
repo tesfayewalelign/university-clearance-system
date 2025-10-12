@@ -1,10 +1,11 @@
 import prisma from "../config/db.js";
+import { Role } from "@prisma/client";
 
 export async function createUser(
   fullName: string,
   email: string,
   passwordHash: string,
-  role = "student"
+  role: Role = Role.STUDENT
 ) {
   return prisma.user.create({
     data: { full_name: fullName, email, password: passwordHash, role },

@@ -1,11 +1,13 @@
 import type { Request, Response } from "express";
 import prisma from "../config/db.js";
+import logger from "../utils/logger.js";
 
 export const createClearanceRequest = async (req: Request, res: Response) => {
   try {
     const student_id = req.user?.id;
 
     if (!student_id) {
+      logger.warn("Unauthorized access attempt to create clearance request");
       return res.status(401).json({ message: "Unauthorized" });
     }
 
@@ -17,6 +19,9 @@ export const createClearanceRequest = async (req: Request, res: Response) => {
     });
 
     if (existingRequest) {
+      logger.info(
+        `Student ID ${student_id} tried to create a duplicate clearance request`
+      );
       return res.status(400).json({
         message: "You already have an active clearance request.",
       });
@@ -29,12 +34,15 @@ export const createClearanceRequest = async (req: Request, res: Response) => {
       },
     });
 
+    logger.info(
+      `Clearance request created successfully for student ID ${student_id}`
+    );
     res.status(201).json({
       message: "Clearance request created successfully.",
       request: newRequest,
     });
-  } catch (error) {
-    console.error("Error creating clearance request:", error);
+  } catch (error: any) {
+    logger.error(`Error creating clearance request: ${error.message}`);
     res.status(500).json({ message: "Internal server error" });
   }
 };
@@ -44,6 +52,7 @@ export const getMyClearanceRequests = async (req: Request, res: Response) => {
     const student_id = req.user?.id;
 
     if (!student_id) {
+      logger.warn("Unauthorized access attempt to fetch clearance requests");
       return res.status(401).json({ message: "Unauthorized" });
     }
 
@@ -52,12 +61,13 @@ export const getMyClearanceRequests = async (req: Request, res: Response) => {
       orderBy: { createdAt: "desc" },
     });
 
+    logger.info(`Fetched clearance requests for student ID ${student_id}`);
     res.status(200).json({
       message: "Your clearance requests fetched successfully.",
       requests,
     });
-  } catch (error) {
-    console.error("Error fetching clearance requests:", error);
+  } catch (error: any) {
+    logger.error(`Error fetching clearance requests: ${error.message}`);
     res.status(500).json({ message: "Internal server error" });
   }
 };

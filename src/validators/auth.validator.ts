@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { Role } from "@prisma/client";
 
 export const signupSchema = z.object({
   full_name: z.string().min(2, "Full name must be at least 2 characters long"),

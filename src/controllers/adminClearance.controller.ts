@@ -1,5 +1,6 @@
 import type { Request, Response } from "express";
 import prisma from "../config/db.js";
+import logger from "../utils/logger.js";
 
 export async function createDepartmentStatus(req: Request, res: Response) {
   try {
@@ -14,12 +15,15 @@ export async function createDepartmentStatus(req: Request, res: Response) {
       },
     });
 
+    logger.info("Department clearance status created successfully");
     res.status(201).json({
       message: "Department clearance status created successfully",
       data: newStatus,
     });
-  } catch (error) {
-    console.error("Error creating department clearance status:", error);
+  } catch (error: any) {
+    logger.error(
+      `Error creating department clearance status: ${error.message}`
+    );
     res.status(500).json({ message: "Internal server error" });
   }
 }
@@ -33,9 +37,10 @@ export async function getAllDepartmentStatuses(req: Request, res: Response) {
       },
     });
 
+    logger.info("Fetched all department clearance statuses");
     res.json(statuses);
-  } catch (error) {
-    console.error("Error fetching statuses:", error);
+  } catch (error: any) {
+    logger.error(`Error fetching statuses: ${error.message}`);
     res.status(500).json({ message: "Internal server error" });
   }
 }
@@ -52,11 +57,15 @@ export async function getDepartmentStatusById(req: Request, res: Response) {
       },
     });
 
-    if (!status) return res.status(404).json({ message: "Status not found" });
+    if (!status) {
+      logger.warn(`Department clearance status not found with ID ${id}`);
+      return res.status(404).json({ message: "Status not found" });
+    }
 
+    logger.info(`Fetched department clearance status with ID ${id}`);
     res.json(status);
-  } catch (error) {
-    console.error("Error fetching status:", error);
+  } catch (error: any) {
+    logger.error(`Error fetching status: ${error.message}`);
     res.status(500).json({ message: "Internal server error" });
   }
 }
@@ -71,12 +80,13 @@ export async function updateDepartmentStatus(req: Request, res: Response) {
       data: { status, comment },
     });
 
+    logger.info(`Department clearance status updated successfully: ID ${id}`);
     res.json({
       message: "Department clearance status updated successfully",
       data: updated,
     });
-  } catch (error) {
-    console.error("Error updating status:", error);
+  } catch (error: any) {
+    logger.error(`Error updating status: ${error.message}`);
     res.status(500).json({ message: "Internal server error" });
   }
 }
@@ -89,9 +99,10 @@ export async function deleteDepartmentStatus(req: Request, res: Response) {
       where: { id: Number(id) },
     });
 
+    logger.info(`Department clearance status deleted successfully: ID ${id}`);
     res.json({ message: "Department clearance status deleted successfully" });
-  } catch (error) {
-    console.error("Error deleting status:", error);
+  } catch (error: any) {
+    logger.error(`Error deleting status: ${error.message}`);
     res.status(500).json({ message: "Internal server error" });
   }
 }

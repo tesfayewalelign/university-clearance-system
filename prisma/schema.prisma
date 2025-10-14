@@ -25,6 +25,7 @@ model User {
   password          String
   role              Role
   departmentId      Int?
+   isTempPassword  Boolean   @default(true)
   department        Department?        @relation(fields: [departmentId], references: [id], name: "UserDepartment")
   studentClearances ClearanceRequest[] @relation("StudentClearances")
 }

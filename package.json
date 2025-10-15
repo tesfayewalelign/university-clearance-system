@@ -16,6 +16,7 @@
     "bcrypt": "^6.0.0",
     "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
+    "crypto": "^1.0.1",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "helmet": "^8.1.0",
@@ -41,8 +42,7 @@
     "typescript": "^5.9.3"
   },
   "prisma": {
-  "seed": "node --loader ts-node/esm prisma/seed.ts"
-},
-
+    "seed": "node --loader ts-node/esm prisma/seed.ts"
+  },
   "description": ""
 }

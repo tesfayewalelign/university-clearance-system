@@ -1,9 +1,9 @@
 import { z } from "zod";
 import { Role } from "@prisma/client";
-
 export const signupSchema = z.object({
   full_name: z.string().min(2, "Full name must be at least 2 characters long"),
   email: z.string().email("Invalid email address"),
+  role: z.nativeEnum(Role),
   password: z
     .string()
     .min(8, "Password must be at least 8 characters long")

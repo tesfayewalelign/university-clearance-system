@@ -1,89 +1,79 @@
 import type { Request, Response } from "express";
-import { signupSchema, loginSchema } from "../validators/auth.validator.js";
 import prisma from "../config/db.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import logger from "../utils/logger.js";
+import { signupSchema, loginSchema } from "../validators/auth.validator.js";
 import { Role } from "@prisma/client";
+import crypto from "crypto";
 
 const JWT_SECRET = process.env.JWT_SECRET || "your_jwt_secret_key";
 
 export async function signup(req: Request, res: Response) {
   try {
-    const parsedData = signupSchema.safeParse(req.body);
-    if (!parsedData.success) {
-      logger.warn("Invalid signup data received");
-      return res.status(400).json({ errors: parsedData.error.issues });
+    const parsed = signupSchema.safeParse(req.body);
+    if (!parsed.success) {
+      return res.status(400).json({ error: parsed.error.issues });
     }
-    const { full_name, email, password } = parsedData.data;
 
-    const role: Role = Role.STUDENT;
+    const { full_name, email, role } = parsed.data;
 
     const existingUser = await prisma.user.findUnique({ where: { email } });
     if (existingUser) {
-      logger.info(`Signup attempt failed: Email already exists (${email})`);
       return res.status(400).json({ message: "Email already exists" });
     }
-
-    const hashedPassword = await bcrypt.hash(password, 10);
+    const tempPassword = crypto.randomBytes(6).toString("hex");
+    const hashedPassword = await bcrypt.hash(tempPassword, 10);
 
     const user = await prisma.user.create({
-      data: { full_name, email, password: hashedPassword, role },
+      data: {
+        full_name,
+        email,
+        password: hashedPassword,
+        role: role as Role,
+        isTempPassword: true,
+      },
     });
 
-    logger.info(`New user registered successfully: ${email}`);
-    return res
-      .status(201)
-      .json({ message: "User registered successfully", user });
-  } catch (error: any) {
-    logger.error(`Signup error: ${error.message}`);
-    return res.status(500).json({ message: "Server error" });
+    res.status(201).json({ message: "User created successfully", user });
+  } catch (error) {
+    res.status(500).json({ message: "Internal server error", error });
   }
 }
 
 export async function login(req: Request, res: Response) {
   try {
-    const parsedData = loginSchema.safeParse(req.body);
-    if (!parsedData.success) {
-      logger.warn("Invalid login data received");
-      return res.status(400).json({ errors: parsedData.error.issues });
+    const parsed = loginSchema.safeParse(req.body);
+    if (!parsed.success) {
+      return res.status(400).json({ error: parsed.error.issues });
     }
 
-    const { email, password } = parsedData.data;
+    const { email, password } = parsed.data;
 
     const user = await prisma.user.findUnique({ where: { email } });
     if (!user) {
-      logger.info(`Login failed: Invalid email (${email})`);
-      return res.status(400).json({ message: "Invalid email or password" });
+      return res.status(400).json({ message: "Invalid credentials" });
     }
 
-    const isPasswordValid = await bcrypt.compare(password, user.password);
-    if (!isPasswordValid) {
-      logger.info(`Login failed: Incorrect password for ${email}`);
-      return res.status(400).json({ message: "Invalid email or password" });
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      return res.status(400).json({ message: "Invalid credentials" });
     }
 
     const token = jwt.sign(
-      { id: user.id, role: user.role, email: user.email },
+      { id: user.id, email: user.email, role: user.role },
       JWT_SECRET,
-      {
-        expiresIn: "1d",
-      }
+      { expiresIn: "1d" }
     );
+    if (user.isTempPassword) {
+      return res.status(200).json({
+        message: "Login successful. Please change your password.",
+        token,
+        firstLogin: true,
+      });
+    }
 
-    logger.info(`Login successful for user: ${email}`);
-    return res.status(200).json({
-      message: "Login successful",
-      token,
-      user: {
-        id: user.id,
-        full_name: user.full_name,
-        email: user.email,
-        role: user.role,
-      },
-    });
-  } catch (error: any) {
-    logger.error(`Login error: ${error.message}`);
-    return res.status(500).json({ message: "Server error" });
+    res.status(200).json({ message: "Login successful", token });
+  } catch (error) {
+    res.status(500).json({ message: "Internal server error", error });
   }
 }

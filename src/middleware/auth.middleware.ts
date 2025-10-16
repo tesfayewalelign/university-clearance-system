@@ -25,7 +25,7 @@ export async function authenticate(
       logger.warn("Authorization header missing or malformed");
       return res
         .status(401)
-        .json({ message: "Authorization header missing or malformed" });
+        .json({ message: "Unauthorized: missing or malformed token" });
     }
 
     const token = header.split(" ")[1];
@@ -33,6 +33,7 @@ export async function authenticate(
       logger.warn("Token missing in authorization header");
       return res.status(401).json({ message: "Token missing" });
     }
+
     const payload = verifyJwt<{ id: number; role: string }>(token);
 
     if (!payload?.id || !payload?.role) {
@@ -59,9 +60,7 @@ export async function authenticate(
     logger.info(`Authenticated user: ${user.email} (Role: ${user.role})`);
     next();
   } catch (error: any) {
-    logger.error(
-      `JWT verific const role: Role = roleStr as Role;ation failed: ${error.message}`
-    );
+    logger.error(`JWT verification failed: ${error.message}`);
     return res.status(401).json({ message: "Invalid or expired token" });
   }
 }

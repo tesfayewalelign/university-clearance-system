@@ -3,23 +3,25 @@ import * as departmentController from "../controllers/ department.controller.js"
 
 import { isAdmin } from "../middleware/role.middleware.js";
 import { authenticate } from "../middleware/auth.middleware.js";
+import {
+  createDepartment,
+  getAllDepartments,
+  getDepartmentById,
+  updateDepartment,
+  deleteDepartment,
+} from "../controllers/ department.controller.js";
 
 const router = express.Router();
 
-router.get("/", departmentController.getDepartments);
-
-router.post("/", authenticate, isAdmin, departmentController.createDepartment);
-router.put(
-  "/:id",
-  authenticate,
-  isAdmin,
-  departmentController.updateDepartment
-);
+router.post("/createDepartment", authenticate, isAdmin, createDepartment);
+router.get("/ getDepartments", getAllDepartments);
+router.get("/getDepartmentById/:id", getDepartmentById);
+router.put("/ updateDepartment/:id", authenticate, isAdmin, updateDepartment);
 router.delete(
-  "/:id",
+  "/ deleteDepartment/:id",
   authenticate,
   isAdmin,
-  departmentController.deleteDepartment
+  deleteDepartment
 );
 
 export default router;

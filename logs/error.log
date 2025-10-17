@@ -169,3 +169,39 @@
 [31m  11 export const updateDepartment = async (id: number, data: any) => {[39m
 [31m→ 12   return prisma.department.update([39m
 [31mUnique constraint failed on the constraint: `Department_name_key`[39m
+[2025-10-17 12:39:58] [31merror[39m: [31mFailed to create department: [39m
+[31mInvalid `prisma.department.create()` invocation in[39m
+[31m/home/tesfaye/clearance-portal/src/services/department.service.ts:4:28[39m
+
+[31m  1 import prisma from "../config/db.js";[39m
+[31m  2 [39m
+[31m  3 export const createDepartment = async (data: any) => {[39m
+[31m→ 4   return prisma.department.create({[39m
+[31m      + data: DepartmentCreateInput | DepartmentUncheckedCreateInput[39m
+[31m      })[39m
+
+[31mArgument `data` is missing.[39m
+[2025-10-17 12:43:40] [31merror[39m: [31mFailed to create department: [39m
+[31mInvalid `prisma.department.create()` invocation in[39m
+[31m/home/tesfaye/clearance-portal/src/services/department.service.ts:4:28[39m
+
+[31m  1 import prisma from "../config/db.js";[39m
+[31m  2 [39m
+[31m  3 export const createDepartment = async (data: any) => {[39m
+[31m→ 4   return prisma.department.create({[39m
+[31m      + data: DepartmentCreateInput | DepartmentUncheckedCreateInput[39m
+[31m      })[39m
+
+[31mArgument `data` is missing.[39m
+[2025-10-17 12:43:41] [31merror[39m: [31mFailed to create department: [39m
+[31mInvalid `prisma.department.create()` invocation in[39m
+[31m/home/tesfaye/clearance-portal/src/services/department.service.ts:4:28[39m
+
+[31m  1 import prisma from "../config/db.js";[39m
+[31m  2 [39m
+[31m  3 export const createDepartment = async (data: any) => {[39m
+[31m→ 4   return prisma.department.create({[39m
+[31m      + data: DepartmentCreateInput | DepartmentUncheckedCreateInput[39m
+[31m      })[39m
+
+[31mArgument `data` is missing.[39m

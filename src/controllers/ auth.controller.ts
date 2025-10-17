@@ -46,6 +46,7 @@ export const createUserByAdmin = async (req: Request, res: Response) => {
     res.status(500).json({ message: "Server error" });
   }
 };
+
 export async function login(req: Request, res: Response) {
   try {
     const { email, password } = req.body;

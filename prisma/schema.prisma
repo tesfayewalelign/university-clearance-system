@@ -25,7 +25,7 @@ model User {
   password          String
   role              Role
   departmentId      Int?
-   isTempPassword  Boolean   @default(true)
+  isTempPassword  Boolean   @default(true)
   department        Department?        @relation(fields: [departmentId], references: [id], name: "UserDepartment")
   studentClearances ClearanceRequest[] @relation("StudentClearances")
 }
@@ -39,14 +39,16 @@ model Department {
 
 model ClearanceRequest {
   id                 Int                         @id @default(autoincrement())
-  student_id         Int
-  overall_status     String                      @default("Pending") // pending | approved | rejected
+  studentId          Int                         @map("student_id")
+  departmentId       Int                         @map("department_id")   
+  overallStatus      String                      @map("overall_status") @default("Pending")
   createdAt          DateTime                    @default(now())
-  student            User                        @relation("StudentClearances", fields: [student_id], references: [id])
+  student            User                        @relation("StudentClearances", fields: [studentId], references: [id])
   departmentStatuses DepartmentClearanceStatus[]
 
-  @@index([student_id])
+  @@index([studentId])
 }
+
 
 model DepartmentClearanceStatus {
   id                   Int      @id @default(autoincrement())

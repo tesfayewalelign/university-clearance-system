@@ -205,3 +205,11 @@
 [31m      })[39m
 
 [31mArgument `data` is missing.[39m
+[2025-10-18 02:54:18] [31merror[39m: [31mError creating clearance request: Cannot destructure property 'departmentId' of 'req.body' as it is undefined.[39m
+[2025-10-18 02:54:19] [31merror[39m: [31mError creating clearance request: Cannot destructure property 'departmentId' of 'req.body' as it is undefined.[39m
+[2025-10-18 02:54:20] [31merror[39m: [31mError creating clearance request: Cannot destructure property 'departmentId' of 'req.body' as it is undefined.[39m
+[2025-10-18 02:54:20] [31merror[39m: [31mError creating clearance request: Cannot destructure property 'departmentId' of 'req.body' as it is undefined.[39m
+[2025-10-18 02:54:21] [31merror[39m: [31mError creating clearance request: Cannot destructure property 'departmentId' of 'req.body' as it is undefined.[39m
+[2025-10-18 02:54:21] [31merror[39m: [31mError creating clearance request: Cannot destructure property 'departmentId' of 'req.body' as it is undefined.[39m
+[2025-10-18 02:54:21] [31merror[39m: [31mError creating clearance request: Cannot destructure property 'departmentId' of 'req.body' as it is undefined.[39m
+[2025-10-18 02:54:21] [31merror[39m: [31mError creating clearance request: Cannot destructure property 'departmentId' of 'req.body' as it is undefined.[39m

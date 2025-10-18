@@ -34,20 +34,24 @@ model Department {
   id                          Int                         @id @default(autoincrement())
   name                        String                      @unique
   users                       User[]                      @relation("UserDepartment")
+  clearanceRequests         ClearanceRequest[] 
   departmentClearanceStatuses DepartmentClearanceStatus[]
 }
 
 model ClearanceRequest {
   id                 Int                         @id @default(autoincrement())
   studentId          Int                         @map("student_id")
-  departmentId       Int                         @map("department_id")   
+  departmentId       Int                         @map("department_id")
   overallStatus      String                      @map("overall_status") @default("Pending")
   createdAt          DateTime                    @default(now())
   student            User                        @relation("StudentClearances", fields: [studentId], references: [id])
+  department         Department                  @relation(fields: [departmentId], references: [id])
+
   departmentStatuses DepartmentClearanceStatus[]
 
   @@index([studentId])
 }
+
 
 
 model DepartmentClearanceStatus {

@@ -12,7 +12,7 @@ const router = Router();
 router.use("/users", userRoutes);
 router.use("/api", departmentRoutes);
 router.use("/api/auth", authRoutes);
-router.use("/api/clearance", clearanceRequestRoutes);
+router.use("/api", clearanceRequestRoutes);
 router.use("/api/department-clearance", departmentClearanceRoutes);
 
 router.put("/api/users/:id/assign-department", authenticate, assignDepartment);

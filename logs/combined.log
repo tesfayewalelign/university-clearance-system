@@ -677,3 +677,81 @@
 [2025-10-17 15:04:52] [32minfo[39m: [32mServer running at http://localhost:5000[39m
 [2025-10-17 15:06:42] [32minfo[39m: [32m Database connected successfully[39m
 [2025-10-17 15:06:42] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-18 01:45:15] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-18 01:45:15] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-18 01:45:55] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-18 01:45:55] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-18 01:46:11] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-18 01:46:11] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-18 01:52:45] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-18 01:52:45] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-18 01:52:48] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-18 01:52:48] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-18 01:52:54] [33mwarn[39m: [33mAuthorization header missing or malformed[39m
+[2025-10-18 01:52:55] [33mwarn[39m: [33mAuthorization header missing or malformed[39m
+[2025-10-18 01:52:56] [33mwarn[39m: [33mAuthorization header missing or malformed[39m
+[2025-10-18 02:01:43] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-18 02:01:43] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-18 02:08:35] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-18 02:08:35] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-18 02:13:32] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-18 02:13:32] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-18 02:13:39] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-18 02:13:39] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-18 02:16:17] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-18 02:16:17] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-18 02:21:12] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-18 02:21:12] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-18 02:34:34] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-18 02:34:34] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-18 02:36:54] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-18 02:36:54] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-18 02:37:37] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-18 02:37:37] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-18 02:39:15] [33mwarn[39m: [33mAuthorization header missing or malformed[39m
+[2025-10-18 02:43:13] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-18 02:43:13] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-18 02:43:33] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-18 02:43:33] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-18 02:46:20] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-18 02:46:20] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-18 02:49:50] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-18 02:49:51] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-18 02:50:00] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-18 02:50:00] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-18 02:50:04] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-18 02:51:18] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-18 02:53:50] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-18 02:53:50] [33mwarn[39m: [33mUser ID 1 with role SUPER_ADMIN tried to create clearance request[39m
+[2025-10-18 02:53:53] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-18 02:53:53] [33mwarn[39m: [33mUser ID 1 with role SUPER_ADMIN tried to create clearance request[39m
+[2025-10-18 02:53:54] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-18 02:53:54] [33mwarn[39m: [33mUser ID 1 with role SUPER_ADMIN tried to create clearance request[39m
+[2025-10-18 02:54:18] [32minfo[39m: [32mAuthenticated user: dagim55@gmail.com (Role: STUDENT)[39m
+[2025-10-18 02:54:18] [31merror[39m: [31mError creating clearance request: Cannot destructure property 'departmentId' of 'req.body' as it is undefined.[39m
+[2025-10-18 02:54:19] [32minfo[39m: [32mAuthenticated user: dagim55@gmail.com (Role: STUDENT)[39m
+[2025-10-18 02:54:19] [31merror[39m: [31mError creating clearance request: Cannot destructure property 'departmentId' of 'req.body' as it is undefined.[39m
+[2025-10-18 02:54:20] [32minfo[39m: [32mAuthenticated user: dagim55@gmail.com (Role: STUDENT)[39m
+[2025-10-18 02:54:20] [31merror[39m: [31mError creating clearance request: Cannot destructure property 'departmentId' of 'req.body' as it is undefined.[39m
+[2025-10-18 02:54:20] [32minfo[39m: [32mAuthenticated user: dagim55@gmail.com (Role: STUDENT)[39m
+[2025-10-18 02:54:20] [31merror[39m: [31mError creating clearance request: Cannot destructure property 'departmentId' of 'req.body' as it is undefined.[39m
+[2025-10-18 02:54:21] [32minfo[39m: [32mAuthenticated user: dagim55@gmail.com (Role: STUDENT)[39m
+[2025-10-18 02:54:21] [31merror[39m: [31mError creating clearance request: Cannot destructure property 'departmentId' of 'req.body' as it is undefined.[39m
+[2025-10-18 02:54:21] [32minfo[39m: [32mAuthenticated user: dagim55@gmail.com (Role: STUDENT)[39m
+[2025-10-18 02:54:21] [31merror[39m: [31mError creating clearance request: Cannot destructure property 'departmentId' of 'req.body' as it is undefined.[39m
+[2025-10-18 02:54:21] [32minfo[39m: [32mAuthenticated user: dagim55@gmail.com (Role: STUDENT)[39m
+[2025-10-18 02:54:21] [31merror[39m: [31mError creating clearance request: Cannot destructure property 'departmentId' of 'req.body' as it is undefined.[39m
+[2025-10-18 02:54:21] [32minfo[39m: [32mAuthenticated user: dagim55@gmail.com (Role: STUDENT)[39m
+[2025-10-18 02:54:21] [31merror[39m: [31mError creating clearance request: Cannot destructure property 'departmentId' of 'req.body' as it is undefined.[39m
+[2025-10-18 02:54:58] [32minfo[39m: [32mAuthenticated user: dagim55@gmail.com (Role: STUDENT)[39m
+[2025-10-18 02:54:58] [32minfo[39m: [32mClearance request created successfully for student ID 6 and department ID 1[39m
+[2025-10-18 02:56:14] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-18 02:56:14] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-18 02:57:02] [33mwarn[39m: [33mUnauthorized access attempt to fetch clearance requests[39m
+[2025-10-18 02:57:03] [33mwarn[39m: [33mUnauthorized access attempt to fetch clearance requests[39m
+[2025-10-18 02:57:33] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-18 02:57:33] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-18 02:57:36] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-18 02:57:36] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-18 04:27:30] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-18 04:27:30] [32minfo[39m: [32mServer running at http://localhost:5000[39m

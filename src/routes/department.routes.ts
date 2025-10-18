@@ -1,5 +1,4 @@
 import express from "express";
-import * as departmentController from "../controllers/ department.controller.js";
 
 import { isAdmin } from "../middleware/role.middleware.js";
 import { authenticate } from "../middleware/auth.middleware.js";

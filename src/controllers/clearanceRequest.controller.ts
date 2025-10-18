@@ -27,9 +27,9 @@ export const createClearanceRequest = async (req: Request, res: Response) => {
 
     const existingRequest = await prisma.clearanceRequest.findFirst({
       where: {
-        student_id: studentId,
-        department_id: departmentId,
-        overall_status: { in: ["Pending", "Approved", "Rejected"] },
+        studentId,
+        departmentId,
+        overallStatus: { in: ["Pending", "Approved", "Rejected"] },
       },
     });
 
@@ -45,9 +45,9 @@ export const createClearanceRequest = async (req: Request, res: Response) => {
 
     const newRequest = await prisma.clearanceRequest.create({
       data: {
-        student_id: studentId,
-        department_id: departmentId,
-        overall_status: "Pending",
+        studentId,
+        departmentId,
+        overallStatus: "Pending",
       },
     });
 
@@ -63,118 +63,153 @@ export const createClearanceRequest = async (req: Request, res: Response) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
-export const getAllClearanceRequests = async (req: Request, res: Response) => {
-  try {
-    let requests;
 
-    if (req.user.role === "ADMIN" || req.user.role === "SUPER_ADMIN") {
-      requests = await prisma.clearanceRequest.findMany({
-        include: { student: true, department: true },
-      });
-    } else if (
-      req.user.role === "CLEARANCE_OFFICER" ||
-      req.user.role === "DEPARTMENT"
-    ) {
-      requests = await prisma.clearanceRequest.findMany({
-        where: { departmentId: req.user.departmentId },
-        include: { student: true, department: true },
-      });
-    } else {
-      return res.status(403).json({ message: "Access denied" });
-    }
-
-    res.status(200).json({ message: "Requests fetched", requests });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Server error", error });
-  }
-};
-export const getMyRequests = async (req: Request, res: Response) => {
+export const getMyClearanceRequests = async (req: Request, res: Response) => {
   try {
-    if (!req.user || req.user.role !== "STUDENT") {
-      return res
-        .status(403)
-        .json({ message: "Only students can view their requests" });
+    const studentId = req.user?.id;
+
+    if (!studentId) {
+      logger.warn("Unauthorized access attempt to fetch clearance requests");
+      return res.status(401).json({ message: "Unauthorized" });
     }
 
     const requests = await prisma.clearanceRequest.findMany({
-      where: { studentId: req.user.id },
-      include: { department: true },
+      where: { studentId },
+      orderBy: { createdAt: "desc" },
     });
 
-    res.status(200).json({ message: "My requests fetched", requests });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Server error", error });
+    logger.info(`Fetched clearance requests for student ID ${studentId}`);
+    res.status(200).json({
+      message: "Your clearance requests fetched successfully.",
+      requests,
+    });
+  } catch (error: any) {
+    logger.error(`Error fetching clearance requests: ${error.message}`);
+    res.status(500).json({ message: "Internal server error" });
   }
 };
-export const updateRequestStatus = async (req: Request, res: Response) => {
+
+export const getAllClearanceRequests = async (req: Request, res: Response) => {
+  try {
+    if (req.user?.role !== "ADMIN" && req.user?.role !== "SUPER_ADMIN") {
+      return res.status(403).json({ message: "Access denied. Admins only." });
+    }
+
+    const requests = await prisma.clearanceRequest.findMany({
+      include: {
+        student: { select: { full_name: true, email: true } },
+        department: { select: { name: true } },
+      },
+      orderBy: { createdAt: "desc" },
+    });
+
+    logger.info(
+      `Fetched all clearance requests by ${req.user?.role} ID ${req.user?.id}`
+    );
+    res.status(200).json({
+      message: "All clearance requests fetched successfully.",
+      requests,
+    });
+  } catch (error: any) {
+    logger.error(`Error fetching all clearance requests: ${error.message}`);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+export const getClearanceRequestById = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+
+    if (!id) {
+      return res.status(400).json({ message: "Request ID is required" });
+    }
+
+    if (req.user?.role !== "ADMIN" && req.user?.role !== "SUPER_ADMIN") {
+      return res.status(403).json({ message: "Access denied. Admins only." });
+    }
+
+    const request = await prisma.clearanceRequest.findUnique({
+      where: { id: Number(id) },
+      include: {
+        student: { select: { full_name: true, email: true } },
+        department: { select: { name: true } },
+      },
+    });
+
+    if (!request) {
+      return res.status(404).json({ message: "Clearance request not found" });
+    }
+
+    res.status(200).json({ message: "Request fetched successfully", request });
+  } catch (error: any) {
+    logger.error(`Error fetching clearance request: ${error.message}`);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+export const updateClearanceRequestStatus = async (
+  req: Request,
+  res: Response
+) => {
   try {
     const { id } = req.params;
     const { status } = req.body;
 
-    if (
-      !req.user ||
-      (req.user.role !== "DEPARTMENT" && req.user.role !== "CLEARANCE_OFFICER")
-    ) {
-      return res.status(403).json({ message: "Access denied" });
+    if (req.user?.role !== "ADMIN" && req.user?.role !== "SUPER_ADMIN") {
+      return res.status(403).json({ message: "Access denied. Admins only." });
     }
 
-    if (!["Pending", "Approved", "Rejected"].includes(status)) {
-      return res.status(400).json({ message: "Invalid status" });
+    if (!["Approved", "Rejected", "Pending"].includes(status)) {
+      return res.status(400).json({
+        message:
+          "Invalid status. Must be 'Approved', 'Rejected', or 'Pending'.",
+      });
     }
 
-    const request = await prisma.clearanceRequest.findUnique({
+    const updatedRequest = await prisma.clearanceRequest.update({
       where: { id: Number(id) },
-    });
-    if (!request) return res.status(404).json({ message: "Request not found" });
-
-    // Check department matches officer's department
-    if (request.departmentId !== req.user.departmentId) {
-      return res
-        .status(403)
-        .json({ message: "Cannot update request for another department" });
-    }
-
-    const updated = await prisma.clearanceRequest.update({
-      where: { id: Number(id) },
-      data: { status },
+      data: { overallStatus: status },
     });
 
-    res
-      .status(200)
-      .json({ message: "Request status updated", request: updated });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Server error", error });
+    logger.info(
+      `Request ID ${id} status updated to ${status} by ${req.user?.role} ID ${req.user?.id}`
+    );
+    res.status(200).json({
+      message: "Clearance request status updated successfully.",
+      request: updatedRequest,
+    });
+  } catch (error: any) {
+    logger.error(`Error updating clearance request: ${error.message}`);
+    res.status(500).json({ message: "Internal server error" });
   }
 };
-
-/**
- * DELETE REQUEST
- * Only admin/superadmin
- */
-export const deleteRequest = async (req: Request, res: Response) => {
+export const deleteClearanceRequest = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
 
-    if (
-      !req.user ||
-      (req.user.role !== "ADMIN" && req.user.role !== "SUPER_ADMIN")
-    ) {
-      return res.status(403).json({ message: "Access denied" });
+    if (req.user?.role !== "SUPER_ADMIN") {
+      return res
+        .status(403)
+        .json({ message: "Only SUPER_ADMIN can delete requests." });
     }
 
-    const request = await prisma.clearanceRequest.findUnique({
+    const existing = await prisma.clearanceRequest.findUnique({
       where: { id: Number(id) },
     });
-    if (!request) return res.status(404).json({ message: "Request not found" });
 
-    await prisma.clearanceRequest.delete({ where: { id: Number(id) } });
+    if (!existing) {
+      return res.status(404).json({ message: "Request not found" });
+    }
 
-    res.status(200).json({ message: "Request deleted successfully" });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Server error", error });
+    await prisma.clearanceRequest.delete({
+      where: { id: Number(id) },
+    });
+
+    logger.info(`Request ID ${id} deleted by SUPER_ADMIN ID ${req.user?.id}`);
+    res
+      .status(200)
+      .json({ message: "Clearance request deleted successfully." });
+  } catch (error: any) {
+    logger.error(`Error deleting clearance request: ${error.message}`);
+    res.status(500).json({ message: "Internal server error" });
   }
 };

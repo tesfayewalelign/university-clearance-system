@@ -9,6 +9,7 @@ declare module "express-serve-static-core" {
       id: number;
       email: string;
       role: string;
+      departmentId?: number;
     };
   }
 }

@@ -17,7 +17,39 @@ export const createUserByAdmin = async (req: Request, res: Response) => {
       return res.status(403).json({ message: "Unauthorized to create users" });
     }
 
-    const { full_name, email, role } = req.body;
+    const { full_name, email, role, departmentId } = req.body;
+
+    const allowedRoles = [
+      "DEPARTMENT",
+      "POLICE_OFFICER",
+      "LIBRARY_OFFICER",
+      "DORMITORY_OFFICER",
+      "FACULTY_OFFICER",
+      "SPORTS_OFFICER",
+      "STUDENT DEAN OFFICER",
+      "CLEARANCE_OFFICER",
+      "ADMIN",
+      "STUDENT",
+    ];
+    if (!allowedRoles.includes(role)) {
+      return res.status(400).json({ message: "Role not allowed" });
+    }
+
+    const rolesRequiringDepartment = [
+      "DEPARTMENT",
+      "POLICE_OFFICER",
+      "LIBRARY_OFFICER",
+      "DORMITORY_OFFICER",
+      "FACULTY_OFFICER",
+      "SPORTS_OFFICER",
+      "STUDENT DEAN OFFICER",
+      "CLEARANCE_OFFICER",
+    ];
+    if (rolesRequiringDepartment.includes(role) && !departmentId) {
+      return res
+        .status(400)
+        .json({ message: `departmentId is required for role ${role}` });
+    }
 
     const tempPassword = generateRandomPassword(10);
     const hashedPassword = await bcrypt.hash(tempPassword, 10);
@@ -29,6 +61,7 @@ export const createUserByAdmin = async (req: Request, res: Response) => {
         role: role as Role,
         password: hashedPassword,
         isTempPassword: true,
+        departmentId: departmentId || null,
       },
     });
 

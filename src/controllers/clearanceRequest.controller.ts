@@ -20,42 +20,48 @@ export const createClearanceRequest = async (req: Request, res: Response) => {
         .json({ message: "Only students can submit clearance requests" });
     }
 
-    const { departmentId } = req.body;
-    if (!departmentId) {
-      return res.status(400).json({ message: "Department is required" });
-    }
-
     const existingRequest = await prisma.clearanceRequest.findFirst({
       where: {
         studentId,
-        departmentId,
-        overallStatus: { in: ["Pending", "Approved", "Rejected"] },
+        overallStatus: { in: ["Pending", "Approved"] },
       },
     });
 
     if (existingRequest) {
       logger.info(
-        `Student ID ${studentId} tried to create a duplicate clearance request for department ID ${departmentId}`
+        `Student ID ${studentId} tried to create a duplicate clearance request`
       );
       return res.status(400).json({
-        message:
-          "You already have an active clearance request for this department.",
+        message: "You already have an active clearance request.",
       });
     }
 
+    const departments = await prisma.department.findMany();
+    const mainDepartmentId = departments[0]?.id;
+    if (!mainDepartmentId) {
+      return res.status(500).json({ message: "No departments found" });
+    }
     const newRequest = await prisma.clearanceRequest.create({
       data: {
-        studentId,
-        departmentId,
+        studentId: studentId,
         overallStatus: "Pending",
+        departmentId: mainDepartmentId,
+        departmentStatuses: {
+          create: departments.map((d) => ({
+            status: "Pending",
+            department: { connect: { id: d.id } },
+          })),
+        },
       },
+      include: { departmentStatuses: true },
     });
 
     logger.info(
-      `Clearance request created successfully for student ID ${studentId} and department ID ${departmentId}`
+      `Clearance request created successfully for student ID ${studentId} with all departments`
     );
+
     res.status(201).json({
-      message: "Clearance request created successfully.",
+      message: "Clearance request created successfully for all departments.",
       request: newRequest,
     });
   } catch (error: any) {

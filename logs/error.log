@@ -213,3 +213,252 @@
 [2025-10-18 02:54:21] [31merror[39m: [31mError creating clearance request: Cannot destructure property 'departmentId' of 'req.body' as it is undefined.[39m
 [2025-10-18 02:54:21] [31merror[39m: [31mError creating clearance request: Cannot destructure property 'departmentId' of 'req.body' as it is undefined.[39m
 [2025-10-18 02:54:21] [31merror[39m: [31mError creating clearance request: Cannot destructure property 'departmentId' of 'req.body' as it is undefined.[39m
+[2025-10-21 06:30:44] [31merror[39m: [31mError creating clearance request: [39m
+[31mInvalid `prisma.clearanceRequest.create()` invocation in[39m
+[31m/home/tesfaye/clearance-portal/src/controllers/clearanceRequest.controller.ts:44:54[39m
+
+[31m  41 if (!mainDepartmentId) {[39m
+[31m  42   return res.status(500).json({ message: "No departments found" });[39m
+[31m  43 }[39m
+[31m→ 44 const newRequest = await prisma.clearanceRequest.create({[39m
+[31m       data: {[39m
+[31m         studentId: 7,[39m
+[31m         overallStatus: "Pending",[39m
+[31m         departmentId: 1,[39m
+[31m         departmentStatuses: {[39m
+[31m         ~~~~~~~~~~~~~~~~~~[39m
+[31m           create: [[39m
+[31m             {[39m
+[31m               status: "Pending",[39m
+[31m               department: {[39m
+[31m                 connect: {[39m
+[31m                   id: 1[39m
+[31m                 }[39m
+[31m               }[39m
+[31m             },[39m
+[31m             {[39m
+[31m               status: "Pending",[39m
+[31m               department: {[39m
+[31m                 connect: {[39m
+[31m                   id: 2[39m
+[31m                 }[39m
+[31m               }[39m
+[31m             },[39m
+[31m             {[39m
+[31m               status: "Pending",[39m
+[31m               department: {[39m
+[31m                 connect: {[39m
+[31m                   id: 4[39m
+[31m                 }[39m
+[31m               }[39m
+[31m             },[39m
+[31m             {[39m
+[31m               status: "Pending",[39m
+[31m               department: {[39m
+[31m                 connect: {[39m
+[31m                   id: 7[39m
+[31m                 }[39m
+[31m               }[39m
+[31m             },[39m
+[31m             {[39m
+[31m               status: "Pending",[39m
+[31m               department: {[39m
+[31m                 connect: {[39m
+[31m                   id: 3[39m
+[31m                 }[39m
+[31m               }[39m
+[31m             },[39m
+[31m             {[39m
+[31m               status: "Pending",[39m
+[31m               department: {[39m
+[31m                 connect: {[39m
+[31m                   id: 5[39m
+[31m                 }[39m
+[31m               }[39m
+[31m             },[39m
+[31m             {[39m
+[31m               status: "Pending",[39m
+[31m               department: {[39m
+[31m                 connect: {[39m
+[31m                   id: 6[39m
+[31m                 }[39m
+[31m               }[39m
+[31m             }[39m
+[31m           ][39m
+[31m         },[39m
+[31m     ?   id?: Int,[39m
+[31m     ?   createdAt?: DateTime,[39m
+[31m     ?   departmentClearanceStatuses?: DepartmentClearanceStatusUncheckedCreateNestedManyWithoutClearanceRequestInput[39m
+[31m       },[39m
+[31m       include: {[39m
+[31m         departmentStatuses: true[39m
+[31m       }[39m
+[31m     })[39m
+
+[31mUnknown argument `departmentStatuses`. Available options are marked with ?.[39m
+[2025-10-21 06:30:46] [31merror[39m: [31mError creating clearance request: [39m
+[31mInvalid `prisma.clearanceRequest.create()` invocation in[39m
+[31m/home/tesfaye/clearance-portal/src/controllers/clearanceRequest.controller.ts:44:54[39m
+
+[31m  41 if (!mainDepartmentId) {[39m
+[31m  42   return res.status(500).json({ message: "No departments found" });[39m
+[31m  43 }[39m
+[31m→ 44 const newRequest = await prisma.clearanceRequest.create({[39m
+[31m       data: {[39m
+[31m         studentId: 7,[39m
+[31m         overallStatus: "Pending",[39m
+[31m         departmentId: 1,[39m
+[31m         departmentStatuses: {[39m
+[31m         ~~~~~~~~~~~~~~~~~~[39m
+[31m           create: [[39m
+[31m             {[39m
+[31m               status: "Pending",[39m
+[31m               department: {[39m
+[31m                 connect: {[39m
+[31m                   id: 1[39m
+[31m                 }[39m
+[31m               }[39m
+[31m             },[39m
+[31m             {[39m
+[31m               status: "Pending",[39m
+[31m               department: {[39m
+[31m                 connect: {[39m
+[31m                   id: 2[39m
+[31m                 }[39m
+[31m               }[39m
+[31m             },[39m
+[31m             {[39m
+[31m               status: "Pending",[39m
+[31m               department: {[39m
+[31m                 connect: {[39m
+[31m                   id: 4[39m
+[31m                 }[39m
+[31m               }[39m
+[31m             },[39m
+[31m             {[39m
+[31m               status: "Pending",[39m
+[31m               department: {[39m
+[31m                 connect: {[39m
+[31m                   id: 7[39m
+[31m                 }[39m
+[31m               }[39m
+[31m             },[39m
+[31m             {[39m
+[31m               status: "Pending",[39m
+[31m               department: {[39m
+[31m                 connect: {[39m
+[31m                   id: 3[39m
+[31m                 }[39m
+[31m               }[39m
+[31m             },[39m
+[31m             {[39m
+[31m               status: "Pending",[39m
+[31m               department: {[39m
+[31m                 connect: {[39m
+[31m                   id: 5[39m
+[31m                 }[39m
+[31m               }[39m
+[31m             },[39m
+[31m             {[39m
+[31m               status: "Pending",[39m
+[31m               department: {[39m
+[31m                 connect: {[39m
+[31m                   id: 6[39m
+[31m                 }[39m
+[31m               }[39m
+[31m             }[39m
+[31m           ][39m
+[31m         },[39m
+[31m     ?   id?: Int,[39m
+[31m     ?   createdAt?: DateTime,[39m
+[31m     ?   departmentClearanceStatuses?: DepartmentClearanceStatusUncheckedCreateNestedManyWithoutClearanceRequestInput[39m
+[31m       },[39m
+[31m       include: {[39m
+[31m         departmentStatuses: true[39m
+[31m       }[39m
+[31m     })[39m
+
+[31mUnknown argument `departmentStatuses`. Available options are marked with ?.[39m
+[2025-10-21 06:30:58] [31merror[39m: [31mError creating clearance request: [39m
+[31mInvalid `prisma.clearanceRequest.create()` invocation in[39m
+[31m/home/tesfaye/clearance-portal/src/controllers/clearanceRequest.controller.ts:44:54[39m
+
+[31m  41 if (!mainDepartmentId) {[39m
+[31m  42   return res.status(500).json({ message: "No departments found" });[39m
+[31m  43 }[39m
+[31m→ 44 const newRequest = await prisma.clearanceRequest.create({[39m
+[31m       data: {[39m
+[31m         studentId: 7,[39m
+[31m         overallStatus: "Pending",[39m
+[31m         departmentId: 1,[39m
+[31m         departmentStatuses: {[39m
+[31m         ~~~~~~~~~~~~~~~~~~[39m
+[31m           create: [[39m
+[31m             {[39m
+[31m               status: "Pending",[39m
+[31m               department: {[39m
+[31m                 connect: {[39m
+[31m                   id: 1[39m
+[31m                 }[39m
+[31m               }[39m
+[31m             },[39m
+[31m             {[39m
+[31m               status: "Pending",[39m
+[31m               department: {[39m
+[31m                 connect: {[39m
+[31m                   id: 2[39m
+[31m                 }[39m
+[31m               }[39m
+[31m             },[39m
+[31m             {[39m
+[31m               status: "Pending",[39m
+[31m               department: {[39m
+[31m                 connect: {[39m
+[31m                   id: 4[39m
+[31m                 }[39m
+[31m               }[39m
+[31m             },[39m
+[31m             {[39m
+[31m               status: "Pending",[39m
+[31m               department: {[39m
+[31m                 connect: {[39m
+[31m                   id: 7[39m
+[31m                 }[39m
+[31m               }[39m
+[31m             },[39m
+[31m             {[39m
+[31m               status: "Pending",[39m
+[31m               department: {[39m
+[31m                 connect: {[39m
+[31m                   id: 3[39m
+[31m                 }[39m
+[31m               }[39m
+[31m             },[39m
+[31m             {[39m
+[31m               status: "Pending",[39m
+[31m               department: {[39m
+[31m                 connect: {[39m
+[31m                   id: 5[39m
+[31m                 }[39m
+[31m               }[39m
+[31m             },[39m
+[31m             {[39m
+[31m               status: "Pending",[39m
+[31m               department: {[39m
+[31m                 connect: {[39m
+[31m                   id: 6[39m
+[31m                 }[39m
+[31m               }[39m
+[31m             }[39m
+[31m           ][39m
+[31m         },[39m
+[31m     ?   id?: Int,[39m
+[31m     ?   createdAt?: DateTime,[39m
+[31m     ?   departmentClearanceStatuses?: DepartmentClearanceStatusUncheckedCreateNestedManyWithoutClearanceRequestInput[39m
+[31m       },[39m
+[31m       include: {[39m
+[31m         departmentStatuses: true[39m
+[31m       }[39m
+[31m     })[39m
+
+[31mUnknown argument `departmentStatuses`. Available options are marked with ?.[39m

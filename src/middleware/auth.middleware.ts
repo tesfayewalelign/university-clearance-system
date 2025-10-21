@@ -9,7 +9,7 @@ declare module "express-serve-static-core" {
       id: number;
       email: string;
       role: string;
-      departmentId?: number;
+      departmentId?: number | undefined;
     };
   }
 }
@@ -44,7 +44,7 @@ export async function authenticate(
 
     const user = await prisma.user.findUnique({
       where: { id: payload.id },
-      select: { id: true, email: true, role: true },
+      select: { id: true, email: true, role: true, departmentId: true },
     });
 
     if (!user) {
@@ -56,6 +56,7 @@ export async function authenticate(
       id: user.id,
       email: user.email,
       role: user.role,
+      departmentId: user.departmentId || undefined,
     };
 
     logger.info(`Authenticated user: ${user.email} (Role: ${user.role})`);

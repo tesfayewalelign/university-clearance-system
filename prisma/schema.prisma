@@ -67,11 +67,11 @@ model Department {
 model ClearanceRequest {
   id                 Int                         @id @default(autoincrement())
   studentId          Int                         @map("student_id")
-  departmentId       Int                         @map("department_id")
+  departmentId       Int?                        @map("department_id")
   overallStatus      String                      @map("overall_status") @default("Pending")
   createdAt          DateTime                    @default(now())
   student            User                        @relation("StudentClearances", fields: [studentId], references: [id])
-  department         Department                  @relation(fields: [departmentId], references: [id])
+  department         Department?                @relation(fields: [departmentId], references: [id])
 
   departmentStatuses DepartmentClearanceStatus[]
 

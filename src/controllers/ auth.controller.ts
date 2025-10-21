@@ -97,9 +97,15 @@ export async function login(req: Request, res: Response) {
       return res.status(500).json({ message: "Server misconfiguration" });
     }
 
-    const token = jwt.sign({ id: user.id, role: user.role }, secret, {
-      expiresIn: "7d",
-    });
+    const payload: any = {
+      id: user.id,
+      role: user.role,
+    };
+    if (user.departmentId) {
+      payload.departmentId = user.departmentId;
+    }
+
+    const token = jwt.sign(payload, secret, { expiresIn: "7d" });
 
     if (user.isTempPassword && user.role !== "SUPER_ADMIN") {
       return res.status(200).json({

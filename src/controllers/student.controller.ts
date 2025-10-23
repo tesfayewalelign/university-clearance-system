@@ -1,36 +1,52 @@
 import type { Request, Response } from "express";
 import prisma from "../config/db.js";
 
-export async function assignDepartment(req: Request, res: Response) {
+export const getMyClearanceStatus = async (req: Request, res: Response) => {
   try {
-    const { id } = req.params;
-    const { departmentId } = req.body;
+    const studentId = req.user?.id;
+    if (!studentId) return res.status(401).json({ message: "Unauthorized" });
 
-    if (!req.user || req.user.role !== "ADMIN") {
-      return res.status(403).json({ message: "Forbidden: Not allowed" });
-    }
-
-    const user = await prisma.user.findUnique({ where: { id: Number(id) } });
-    if (!user) return res.status(404).json({ message: "User not found" });
-
-    const updatedUser = await prisma.user.update({
-      where: { id: Number(id) },
-      data: { departmentId: Number(departmentId) },
-      select: {
-        id: true,
-        full_name: true,
-        email: true,
-        role: true,
-        departmentId: true,
+    const request = await prisma.clearanceRequest.findFirst({
+      where: { studentId },
+      include: {
+        departmentStatuses: { include: { department: true } },
       },
     });
 
-    return res.json({
-      message: "Department assigned successfully",
-      user: updatedUser,
+    if (!request)
+      return res.status(404).json({ message: "No clearance request found" });
+
+    res.status(200).json({
+      message: "Your clearance request status",
+      data: request,
     });
-  } catch (err) {
-    console.error("Assign department error:", err);
-    return res.status(500).json({ message: "Internal server error" });
+  } catch (error) {
+    console.error("Error fetching student clearance status:", error);
+    res.status(500).json({ message: "Internal server error" });
   }
-}
+};
+
+export const getStudentDashboard = async (req: Request, res: Response) => {
+  try {
+    const studentId = req.user?.id;
+    if (!studentId) return res.status(401).json({ message: "Unauthorized" });
+
+    const request = await prisma.clearanceRequest.findFirst({
+      where: { studentId },
+      include: { departmentStatuses: true },
+    });
+
+    const pendingCount =
+      request?.departmentStatuses.filter((s) => s.status === "Pending")
+        .length || 0;
+
+    res.status(200).json({
+      message: "Student dashboard data",
+      overallStatus: request?.overallStatus || "No request",
+      pendingDepartments: pendingCount,
+    });
+  } catch (error) {
+    console.error("Error fetching dashboard data:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};

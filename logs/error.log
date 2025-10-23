@@ -462,3 +462,17 @@
 [31m     })[39m
 
 [31mUnknown argument `departmentStatuses`. Available options are marked with ?.[39m
+[2025-10-23 11:55:01] [31merror[39m: [31m Failed to connect to the database: [39m
+[31mInvalid `prisma.$queryRaw()` invocation:[39m
+
+
+[31mCan't reach database server at `localhost:3306`[39m
+
+[31mPlease make sure your database server is running at `localhost:3306`.[39m
+[2025-10-23 11:59:31] [31merror[39m: [31m Failed to connect to the database: [39m
+[31mInvalid `prisma.$queryRaw()` invocation:[39m
+
+
+[31mCan't reach database server at `localhost:3306`[39m
+
+[31mPlease make sure your database server is running at `localhost:3306`.[39m

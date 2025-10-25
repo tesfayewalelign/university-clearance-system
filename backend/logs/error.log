@@ -1,0 +1,27 @@
+[2025-10-25 12:28:23] [31merror[39m: [31mError deleting department: [39m
+[31mInvalid `prisma.department.delete()` invocation in[39m
+[31m/home/tesfaye/clearance-portal/backend/src/controllers/ department.controller.ts:93:29[39m
+
+[31m  90 if (!department)[39m
+[31m  91   return res.status(404).json({ message: "Department not found" });[39m
+[31m  92 [39m
+[31m→ 93 await prisma.department.delete([39m
+[31mForeign key constraint violated on the fields: (`department_id`)[39m
+[2025-10-25 12:28:24] [31merror[39m: [31mError deleting department: [39m
+[31mInvalid `prisma.department.delete()` invocation in[39m
+[31m/home/tesfaye/clearance-portal/backend/src/controllers/ department.controller.ts:93:29[39m
+
+[31m  90 if (!department)[39m
+[31m  91   return res.status(404).json({ message: "Department not found" });[39m
+[31m  92 [39m
+[31m→ 93 await prisma.department.delete([39m
+[31mForeign key constraint violated on the fields: (`department_id`)[39m
+[2025-10-25 12:28:41] [31merror[39m: [31mError deleting department: [39m
+[31mInvalid `prisma.department.delete()` invocation in[39m
+[31m/home/tesfaye/clearance-portal/backend/src/controllers/ department.controller.ts:93:29[39m
+
+[31m  90 if (!department)[39m
+[31m  91   return res.status(404).json({ message: "Department not found" });[39m
+[31m  92 [39m
+[31m→ 93 await prisma.department.delete([39m
+[31mForeign key constraint violated on the fields: (`department_id`)[39m

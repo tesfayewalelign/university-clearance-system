@@ -1,0 +1,219 @@
+[2025-10-24 05:01:19] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-24 05:01:19] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-24 05:01:42] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-24 05:01:42] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-24 05:47:18] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-24 05:47:18] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-24 06:13:56] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-24 06:13:58] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-24 06:14:23] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-24 06:14:23] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-24 06:14:37] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-24 06:15:15] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-24 06:15:15] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-24 06:15:34] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-24 06:16:27] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-24 06:21:27] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: STUDENT)[39m
+[2025-10-24 06:21:28] [32minfo[39m: [32mStudent ID 9 tried to create a duplicate clearance request[39m
+[2025-10-24 06:23:33] [32minfo[39m: [32mAuthenticated user: damot13@gmail.com (Role: STUDENT_DEAN_OFFICER)[39m
+[2025-10-24 06:27:43] [32minfo[39m: [32mAuthenticated user: damot13@gmail.com (Role: STUDENT_DEAN_OFFICER)[39m
+[2025-10-24 06:29:13] [32minfo[39m: [32mAuthenticated user: sami13@gmail.com (Role: LIBRARY_OFFICER)[39m
+[2025-10-24 06:30:33] [32minfo[39m: [32mAuthenticated user: yakob13@gmail.com (Role: POLICE_OFFICER)[39m
+[2025-10-24 06:31:16] [32minfo[39m: [32mAuthenticated user: alemayehu13@gmail.com (Role: FACULTY_OFFICER)[39m
+[2025-10-24 06:31:54] [32minfo[39m: [32mAuthenticated user: girma13@gmail.com (Role: SPORTS_OFFICER)[39m
+[2025-10-24 06:42:29] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-24 06:42:29] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-24 06:44:52] [32minfo[39m: [32mAuthenticated user: girma13@gmail.com (Role: SPORTS_OFFICER)[39m
+[2025-10-24 06:46:15] [32minfo[39m: [32mAuthenticated user: yakob13@gmail.com (Role: POLICE_OFFICER)[39m
+[2025-10-24 06:47:03] [32minfo[39m: [32mAuthenticated user: sami13@gmail.com (Role: LIBRARY_OFFICER)[39m
+[2025-10-24 06:47:53] [32minfo[39m: [32mAuthenticated user: alemayehu13@gmail.com (Role: FACULTY_OFFICER)[39m
+[2025-10-24 06:48:46] [32minfo[39m: [32mAuthenticated user: damot13@gmail.com (Role: STUDENT_DEAN_OFFICER)[39m
+[2025-10-24 07:25:52] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-24 07:25:52] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-24 07:26:52] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-24 07:26:52] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-24 07:31:33] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-24 07:31:34] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-24 07:31:41] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-24 07:31:41] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-24 07:31:44] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-24 07:33:11] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-24 07:33:12] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-24 07:34:31] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-24 07:34:32] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-24 07:36:17] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-24 07:36:17] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-24 07:36:24] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-24 07:36:25] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-24 07:36:25] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-24 07:36:25] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-24 07:36:26] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-24 07:36:26] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-24 07:38:46] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-24 07:38:46] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-24 07:38:49] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-24 07:38:50] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-24 07:40:03] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-24 07:40:03] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-24 07:40:12] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-24 07:40:13] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-24 07:53:08] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-24 07:53:08] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-24 07:53:30] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-24 07:55:58] [32minfo[39m: [32mAuthenticated user: eyob13@gmail.com (Role: DORMITARY)[39m
+[2025-10-24 07:56:00] [32minfo[39m: [32mAuthenticated user: eyob13@gmail.com (Role: DORMITARY)[39m
+[2025-10-24 07:56:01] [32minfo[39m: [32mAuthenticated user: eyob13@gmail.com (Role: DORMITARY)[39m
+[2025-10-24 07:57:31] [32minfo[39m: [32mAuthenticated user: eyob13@gmail.com (Role: DORMITARY)[39m
+[2025-10-24 07:58:40] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-24 07:58:42] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-24 07:58:50] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-24 08:04:03] [32minfo[39m: [32mAuthenticated user: eyob12@gmail.com (Role: DORMITARY)[39m
+[2025-10-24 11:32:29] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-24 11:32:29] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-24 12:16:21] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-24 12:16:21] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-24 12:17:28] [32minfo[39m: [32mAuthenticated user: yakob13@gmail.com (Role: POLICE_OFFICER)[39m
+[2025-10-24 12:18:13] [32minfo[39m: [32mAuthenticated user: sami13@gmail.com (Role: LIBRARY_OFFICER)[39m
+[2025-10-24 12:18:59] [32minfo[39m: [32mAuthenticated user: alemayehu13@gmail.com (Role: FACULTY_OFFICER)[39m
+[2025-10-24 12:19:38] [32minfo[39m: [32mAuthenticated user: alemayehu13@gmail.com (Role: FACULTY_OFFICER)[39m
+[2025-10-24 12:20:19] [32minfo[39m: [32mAuthenticated user: girma13@gmail.com (Role: SPORTS_OFFICER)[39m
+[2025-10-24 12:20:56] [32minfo[39m: [32mAuthenticated user: damot13@gmail.com (Role: STUDENT_DEAN_OFFICER)[39m
+[2025-10-24 12:21:01] [32minfo[39m: [32mAuthenticated user: damot13@gmail.com (Role: STUDENT_DEAN_OFFICER)[39m
+[2025-10-24 12:27:15] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-24 12:27:15] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-24 12:28:17] [33mwarn[39m: [33mAuthorization header missing or malformed[39m
+[2025-10-24 12:28:18] [33mwarn[39m: [33mAuthorization header missing or malformed[39m
+[2025-10-24 12:28:37] [32minfo[39m: [32mAuthenticated user: damot13@gmail.com (Role: STUDENT_DEAN_OFFICER)[39m
+[2025-10-24 12:29:21] [32minfo[39m: [32mAuthenticated user: damot13@gmail.com (Role: STUDENT_DEAN_OFFICER)[39m
+[2025-10-24 12:29:32] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-24 12:29:32] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-25 06:11:06] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-25 06:11:06] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-25 06:21:43] [33mwarn[39m: [33mUnauthorized access attempt to fetch clearance requests[39m
+[2025-10-25 06:21:44] [33mwarn[39m: [33mUnauthorized access attempt to fetch clearance requests[39m
+[2025-10-25 06:21:45] [33mwarn[39m: [33mUnauthorized access attempt to fetch clearance requests[39m
+[2025-10-25 06:25:59] [33mwarn[39m: [33mUnauthorized access attempt to fetch clearance requests[39m
+[2025-10-25 06:26:00] [33mwarn[39m: [33mUnauthorized access attempt to fetch clearance requests[39m
+[2025-10-25 06:26:00] [33mwarn[39m: [33mUnauthorized access attempt to fetch clearance requests[39m
+[2025-10-25 06:26:26] [33mwarn[39m: [33mUnauthorized access attempt to fetch clearance requests[39m
+[2025-10-25 06:26:27] [33mwarn[39m: [33mUnauthorized access attempt to fetch clearance requests[39m
+[2025-10-25 06:26:27] [33mwarn[39m: [33mUnauthorized access attempt to fetch clearance requests[39m
+[2025-10-25 06:26:27] [33mwarn[39m: [33mUnauthorized access attempt to fetch clearance requests[39m
+[2025-10-25 06:27:13] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: STUDENT)[39m
+[2025-10-25 06:27:13] [32minfo[39m: [32mStudent ID 9 tried to create a duplicate clearance request[39m
+[2025-10-25 06:28:02] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: STUDENT)[39m
+[2025-10-25 06:57:24] [32minfo[39m: [32mAuthenticated user: yakob13@gmail.com (Role: POLICE_OFFICER)[39m
+[2025-10-25 06:57:29] [32minfo[39m: [32mAuthenticated user: yakob13@gmail.com (Role: POLICE_OFFICER)[39m
+[2025-10-25 06:57:30] [32minfo[39m: [32mAuthenticated user: yakob13@gmail.com (Role: POLICE_OFFICER)[39m
+[2025-10-25 06:57:30] [32minfo[39m: [32mAuthenticated user: yakob13@gmail.com (Role: POLICE_OFFICER)[39m
+[2025-10-25 06:57:31] [32minfo[39m: [32mAuthenticated user: yakob13@gmail.com (Role: POLICE_OFFICER)[39m
+[2025-10-25 06:57:31] [32minfo[39m: [32mAuthenticated user: yakob13@gmail.com (Role: POLICE_OFFICER)[39m
+[2025-10-25 06:57:31] [32minfo[39m: [32mAuthenticated user: yakob13@gmail.com (Role: POLICE_OFFICER)[39m
+[2025-10-25 06:57:31] [32minfo[39m: [32mAuthenticated user: yakob13@gmail.com (Role: POLICE_OFFICER)[39m
+[2025-10-25 06:57:32] [32minfo[39m: [32mAuthenticated user: yakob13@gmail.com (Role: POLICE_OFFICER)[39m
+[2025-10-25 06:57:32] [32minfo[39m: [32mAuthenticated user: yakob13@gmail.com (Role: POLICE_OFFICER)[39m
+[2025-10-25 06:59:24] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: STUDENT)[39m
+[2025-10-25 06:59:24] [32minfo[39m: [32mStudent ID 9 tried to create a duplicate clearance request[39m
+[2025-10-25 06:59:25] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: STUDENT)[39m
+[2025-10-25 06:59:25] [32minfo[39m: [32mStudent ID 9 tried to create a duplicate clearance request[39m
+[2025-10-25 06:59:25] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: STUDENT)[39m
+[2025-10-25 06:59:25] [32minfo[39m: [32mStudent ID 9 tried to create a duplicate clearance request[39m
+[2025-10-25 06:59:25] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: STUDENT)[39m
+[2025-10-25 06:59:25] [32minfo[39m: [32mStudent ID 9 tried to create a duplicate clearance request[39m
+[2025-10-25 06:59:25] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: STUDENT)[39m
+[2025-10-25 06:59:25] [32minfo[39m: [32mStudent ID 9 tried to create a duplicate clearance request[39m
+[2025-10-25 06:59:25] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: STUDENT)[39m
+[2025-10-25 06:59:25] [32minfo[39m: [32mStudent ID 9 tried to create a duplicate clearance request[39m
+[2025-10-25 06:59:33] [32minfo[39m: [32mAuthenticated user: yakob13@gmail.com (Role: POLICE_OFFICER)[39m
+[2025-10-25 06:59:33] [32minfo[39m: [32mAuthenticated user: yakob13@gmail.com (Role: POLICE_OFFICER)[39m
+[2025-10-25 06:59:34] [32minfo[39m: [32mAuthenticated user: yakob13@gmail.com (Role: POLICE_OFFICER)[39m
+[2025-10-25 06:59:34] [32minfo[39m: [32mAuthenticated user: yakob13@gmail.com (Role: POLICE_OFFICER)[39m
+[2025-10-25 06:59:34] [32minfo[39m: [32mAuthenticated user: yakob13@gmail.com (Role: POLICE_OFFICER)[39m
+[2025-10-25 06:59:34] [32minfo[39m: [32mAuthenticated user: yakob13@gmail.com (Role: POLICE_OFFICER)[39m
+[2025-10-25 06:59:35] [32minfo[39m: [32mAuthenticated user: yakob13@gmail.com (Role: POLICE_OFFICER)[39m
+[2025-10-25 07:08:34] [32minfo[39m: [32mAuthenticated user: yakob13@gmail.com (Role: POLICE_OFFICER)[39m
+[2025-10-25 07:08:34] [32minfo[39m: [32mAuthenticated user: yakob13@gmail.com (Role: POLICE_OFFICER)[39m
+[2025-10-25 07:08:35] [32minfo[39m: [32mAuthenticated user: yakob13@gmail.com (Role: POLICE_OFFICER)[39m
+[2025-10-25 07:08:35] [32minfo[39m: [32mAuthenticated user: yakob13@gmail.com (Role: POLICE_OFFICER)[39m
+[2025-10-25 07:08:35] [32minfo[39m: [32mAuthenticated user: yakob13@gmail.com (Role: POLICE_OFFICER)[39m
+[2025-10-25 07:08:36] [32minfo[39m: [32mAuthenticated user: yakob13@gmail.com (Role: POLICE_OFFICER)[39m
+[2025-10-25 07:08:36] [32minfo[39m: [32mAuthenticated user: yakob13@gmail.com (Role: POLICE_OFFICER)[39m
+[2025-10-25 07:09:16] [32minfo[39m: [32mAuthenticated user: damot13@gmail.com (Role: STUDENT_DEAN_OFFICER)[39m
+[2025-10-25 07:09:17] [32minfo[39m: [32mAuthenticated user: damot13@gmail.com (Role: STUDENT_DEAN_OFFICER)[39m
+[2025-10-25 07:10:10] [32minfo[39m: [32mAuthenticated user: damot13@gmail.com (Role: STUDENT_DEAN_OFFICER)[39m
+[2025-10-25 11:43:35] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-25 11:43:35] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-25 11:45:20] [32minfo[39m: [32mAuthenticated user: tesfayewalelign44@gmail.com (Role: STUDENT)[39m
+[2025-10-25 11:49:11] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-25 11:49:11] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-25 11:50:20] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-10-25 11:51:07] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-10-25 11:56:03] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-25 11:56:03] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-25 12:12:00] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-25 12:27:48] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-25 12:27:48] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-25 12:28:20] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-25 12:28:20] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-25 12:28:22] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-25 12:28:23] [31merror[39m: [31mError deleting department: [39m
+[31mInvalid `prisma.department.delete()` invocation in[39m
+[31m/home/tesfaye/clearance-portal/backend/src/controllers/ department.controller.ts:93:29[39m
+
+[31m  90 if (!department)[39m
+[31m  91   return res.status(404).json({ message: "Department not found" });[39m
+[31m  92 [39m
+[31m→ 93 await prisma.department.delete([39m
+[31mForeign key constraint violated on the fields: (`department_id`)[39m
+[2025-10-25 12:28:24] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-25 12:28:24] [31merror[39m: [31mError deleting department: [39m
+[31mInvalid `prisma.department.delete()` invocation in[39m
+[31m/home/tesfaye/clearance-portal/backend/src/controllers/ department.controller.ts:93:29[39m
+
+[31m  90 if (!department)[39m
+[31m  91   return res.status(404).json({ message: "Department not found" });[39m
+[31m  92 [39m
+[31m→ 93 await prisma.department.delete([39m
+[31mForeign key constraint violated on the fields: (`department_id`)[39m
+[2025-10-25 12:28:34] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-25 12:28:34] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-25 12:28:41] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-25 12:28:41] [31merror[39m: [31mError deleting department: [39m
+[31mInvalid `prisma.department.delete()` invocation in[39m
+[31m/home/tesfaye/clearance-portal/backend/src/controllers/ department.controller.ts:93:29[39m
+
+[31m  90 if (!department)[39m
+[31m  91   return res.status(404).json({ message: "Department not found" });[39m
+[31m  92 [39m
+[31m→ 93 await prisma.department.delete([39m
+[31mForeign key constraint violated on the fields: (`department_id`)[39m
+[2025-10-25 12:37:04] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-25 12:37:04] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-25 12:37:07] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-25 12:42:37] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-25 12:42:37] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-25 12:42:42] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-25 12:43:08] [32minfo[39m: [32mAuthenticated user: tesfayewalelign2@gmail.com (Role: SUPER_ADMIN)[39m
+[2025-10-25 12:44:42] [32minfo[39m: [32mAuthenticated user: nahom11@gmail.com (Role: STUDENT)[39m
+[2025-10-25 12:44:42] [32minfo[39m: [32mClearance request created successfully for student ID 19 with all departments[39m
+[2025-10-25 12:45:46] [33mwarn[39m: [33mUnauthorized access attempt to fetch clearance requests[39m
+[2025-10-25 12:45:47] [33mwarn[39m: [33mUnauthorized access attempt to fetch clearance requests[39m
+[2025-10-25 12:45:48] [33mwarn[39m: [33mUnauthorized access attempt to fetch clearance requests[39m
+[2025-10-25 12:46:11] [33mwarn[39m: [33mUnauthorized access attempt to fetch clearance requests[39m
+[2025-10-25 12:46:12] [33mwarn[39m: [33mUnauthorized access attempt to fetch clearance requests[39m
+[2025-10-25 12:46:44] [33mwarn[39m: [33mUnauthorized access attempt to fetch clearance requests[39m
+[2025-10-25 12:47:22] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-25 12:47:22] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-25 12:49:01] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-25 12:49:01] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-25 12:50:20] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-25 12:50:20] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-25 12:53:22] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-25 12:53:22] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-25 12:54:32] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-25 12:54:32] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-10-25 12:58:28] [32minfo[39m: [32mAuthenticated user: yakob13@gmail.com (Role: POLICE_OFFICER)[39m
+[2025-10-25 12:59:20] [32minfo[39m: [32mAuthenticated user: nahom11@gmail.com (Role: STUDENT)[39m
+[2025-10-25 12:59:35] [32minfo[39m: [32mAuthenticated user: nahom11@gmail.com (Role: STUDENT)[39m
+[2025-10-25 13:05:10] [32minfo[39m: [32m Database connected successfully[39m
+[2025-10-25 13:05:10] [32minfo[39m: [32mServer running at http://localhost:5000[39m

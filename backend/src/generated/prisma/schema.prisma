@@ -1,0 +1,52 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider          = "mysql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
+
+model User {
+  id                Int                @id @default(autoincrement())
+  full_name         String
+  email             String             @unique
+  password          String
+  role              String
+  createdAt         DateTime           @default(now())
+  clearanceRequests ClearanceRequest[] @relation("StudentClearances")
+}
+
+model Department {
+  id                          Int                         @id @default(autoincrement())
+  name                        String                      @unique
+  departmentClearanceStatuses DepartmentClearanceStatus[]
+}
+
+model ClearanceRequest {
+  id                 Int                         @id @default(autoincrement())
+  student_id         Int
+  overall_status     String                      @default("Pending")
+  createdAt          DateTime                    @default(now())
+  student            User                        @relation("StudentClearances", fields: [student_id], references: [id])
+  departmentStatuses DepartmentClearanceStatus[]
+
+  @@index([student_id])
+}
+
+model DepartmentClearanceStatus {
+  id                   Int      @id @default(autoincrement())
+  clearance_request_id Int
+  department_id        Int
+  status               String   @default("Pending")
+  comment              String? // optional
+  updated_at           DateTime @default(now()) @updatedAt
+
+  clearanceRequest ClearanceRequest @relation(fields: [clearance_request_id], references: [id])
+  department       Department       @relation(fields: [department_id], references: [id])
+
+  @@index([clearance_request_id])
+  @@index([department_id])
+}

@@ -1,0 +1,97 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider          = "mysql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
+enum Role {
+  STUDENT
+  ADMIN
+  SUPER_ADMIN
+  DEPARTMENT
+  CLEARANCE_OFFICER
+  POLICE_OFFICER
+  LIBRARY_OFFICER
+  DORMITORY_OFFICER
+  FACULTY_OFFICER
+  SPORTS_OFFICER
+  STUDENT_DEAN_OFFICER
+  DORMITARY
+}
+
+
+enum ClearanceStatus {
+
+  PENDING
+  APPROVED_BY_DORMITORY
+  REJECTED_BY_DORMITORY
+  APPROVED_BY_POLICE
+  REJECTED_BY_POLICE
+  APPROVED_BY_FACULTY
+  REJECTED_BY_FACULTY
+  APPROVED_BY_SPORTS
+  REJECTED_BY_SPORTS
+  APPROVED_BY_STUDENT_DEAN
+  REJECTED_BY_STUDENT_DEAN
+  APPROVED_BY_LIBRARY
+  REJECTED_BY_LIBRARY
+
+  APPROVED
+  REJECTED
+}
+
+
+
+model User {
+  id                Int                @id @default(autoincrement())
+  full_name         String
+  email             String             @unique
+  password          String
+  role              Role
+  departmentId      Int?
+  isTempPassword  Boolean   @default(true)
+  department        Department?        @relation(fields: [departmentId], references: [id], name: "UserDepartment")
+  studentClearances ClearanceRequest[] @relation("StudentClearances")
+}
+
+model Department {
+  id                          Int                         @id @default(autoincrement())
+  name                        String                      @unique
+  users                       User[]                      @relation("UserDepartment")
+  clearanceRequests         ClearanceRequest[] 
+  departmentClearanceStatuses DepartmentClearanceStatus[]
+}
+
+model ClearanceRequest {
+  id                 Int                         @id @default(autoincrement())
+  studentId          Int                         @map("student_id")
+  departmentId       Int?                        @map("department_id")
+  overallStatus      String                      @map("overall_status") @default("Pending")
+  createdAt          DateTime                    @default(now())
+  student            User                        @relation("StudentClearances", fields: [studentId], references: [id])
+  department         Department?                @relation(fields: [departmentId], references: [id])
+
+  departmentStatuses DepartmentClearanceStatus[]
+
+  @@index([studentId])
+}
+
+
+
+model DepartmentClearanceStatus {
+  id                   Int      @id @default(autoincrement())
+  clearance_request_id Int
+  department_id        Int
+  status               String   @default("Pending")
+  comment              String?
+  updated_at           DateTime @default(now()) @updatedAt
+
+  clearanceRequest ClearanceRequest @relation(fields: [clearance_request_id], references: [id])
+  department       Department       @relation(fields: [department_id], references: [id], onDelete: Cascade)
+
+  @@index([clearance_request_id])
+  @@index([department_id])
+}

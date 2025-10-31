@@ -28,9 +28,9 @@ export default function Login() {
       localStorage.setItem("token", token);
       localStorage.setItem("role", role);
 
-      if (role === "student") navigate("/student/dashboard");
-      else if (role === "officer") navigate("/officer/dashboard");
-      else if (role === "admin") navigate("/admin/dashboard");
+      if (role === "STUDENT") navigate("student/dashboard");
+      else if (role === "OFFICER") navigate("/officer/dashboard");
+      else if (role === "ADMIN") navigate("/admin/dashboard");
     } catch (err: any) {
       setError(err.response?.data?.message || "Login failed");
     }

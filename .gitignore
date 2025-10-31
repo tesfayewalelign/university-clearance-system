@@ -6,3 +6,4 @@ npm-debug.log
 /src/generated/prisma
 prisma/migrations/
 prisma/seed.ts
+.vs code 

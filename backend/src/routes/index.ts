@@ -7,9 +7,17 @@ import { authenticate } from "../middleware/auth.middleware.js";
 import userRoutes from "./user.routes.js";
 import studentRoutes from "../routes/student.routes.js";
 import adminRoutes from "../routes/admin.routes.js";
+import cors from "cors";
 
 const router = Router();
-
+router.use(
+  cors({
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true,
+  })
+);
 router.use("/users", userRoutes);
 router.use("/api", departmentRoutes);
 router.use("/api/auth", authRoutes);

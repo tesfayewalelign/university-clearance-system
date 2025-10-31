@@ -1,16 +1,14 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import StudentDashboard from "../pages/student/Dashboard";
-import OfficerDashboard from "../pages/officer/Dashboard";
-import AdminDashboard from "../pages/admin/Dashboard";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "../ pages/auth/Login";
+import StudentDashboard from "../ pages/ student/Dashboard";
 
 export default function AppRoutes() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
-        <Route path="/student" element={<StudentDashboard />} />
-        <Route path="/officer" element={<OfficerDashboard />} />
-        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/StudenDashboard" element={<StudentDashboard />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }

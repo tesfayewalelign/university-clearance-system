@@ -50,3 +50,39 @@ export const getStudentDashboard = async (req: Request, res: Response) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
+export const getStudentProfile = async (req: Request, res: Response) => {
+  try {
+    if (!req.user?.id) return res.status(401).json({ message: "Unauthorized" });
+
+    const student = await prisma.user.findUnique({
+      where: { id: req.user.id },
+      select: {
+        id: true,
+        full_name: true,
+        email: true,
+        departmentId: true,
+      },
+    });
+
+    if (!student) return res.status(404).json({ message: "Student not found" });
+
+    let departmentName: string | null = null;
+    if (student.departmentId) {
+      const department = await prisma.department.findUnique({
+        where: { id: student.departmentId },
+        select: { name: true },
+      });
+      departmentName = department?.name || null;
+    }
+
+    res.json({
+      id: student.id,
+      name: student.full_name,
+      email: student.email,
+      department: departmentName,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
+};

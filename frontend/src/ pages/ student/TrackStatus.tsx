@@ -2,42 +2,53 @@ import React, { useEffect, useState } from "react";
 import ProtectedRoute from "../../components/ProtectedRoute";
 import axios from "axios";
 
-interface Clearance {
-  id: string;
-  department: string;
-  description: string;
+interface DepartmentStatus {
+  id: number;
   status: string;
+  comment: string | null;
+  updated_at: string;
+  department: {
+    id: number;
+    name: string;
+  };
+}
+
+interface Clearance {
+  id: number;
+  overallStatus: string;
   createdAt: string;
+  departmentStatuses: DepartmentStatus[];
 }
 
 const TrackStatus: React.FC = () => {
-  const [clearances, setClearances] = useState<Clearance[]>([]);
+  const [clearance, setClearance] = useState<Clearance | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchClearances = async () => {
+    const fetchClearance = async () => {
       try {
         const token = localStorage.getItem("token");
         if (!token) return;
 
         const res = await axios.get(
-          `http://localhost:5000/api/clearances/student?ts=${Date.now()}`,
-          {
-            headers: { Authorization: `Bearer ${token}` },
-          }
+          `http://localhost:5000/api/student/clearanceStatus`,
+          { headers: { Authorization: `Bearer ${token}` } }
         );
 
-        setClearances(Array.isArray(res.data) ? res.data : []);
+        if (res.status === 204 || !res.data?.data) {
+          setClearance(null);
+        } else {
+          setClearance(res.data.data);
+        }
       } catch (err: any) {
-        console.error(err);
-        setError(err.response?.data?.message || "Failed to fetch clearances");
+        setError(err.response?.data?.message || "Failed to fetch clearance");
       } finally {
         setLoading(false);
       }
     };
 
-    fetchClearances();
+    fetchClearance();
   }, []);
 
   if (loading) return <div className="p-10">Loading...</div>;
@@ -51,7 +62,6 @@ const TrackStatus: React.FC = () => {
             <h2 className="text-2xl font-bold text-center mt-6 mb-8 text-blue-700">
               Clearance Portal
             </h2>
-
             <nav className="flex flex-col gap-3 px-6">
               <a
                 href="/student/Dashboard"
@@ -92,43 +102,56 @@ const TrackStatus: React.FC = () => {
             🔍 Track Clearance Status
           </h1>
 
-          {clearances.length === 0 ? (
+          {!clearance ? (
             <p className="text-gray-600">
               No clearance requests submitted yet.
             </p>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {clearances.map((c) => (
-                <div
-                  key={c.id}
-                  className="bg-white p-6 rounded-2xl shadow-sm border"
-                >
-                  <h3 className="text-lg font-semibold mb-2 text-gray-800">
-                    {c.department} Clearance
-                  </h3>
-                  <p className="text-sm text-gray-600 mb-1">
-                    Description: {c.description}
-                  </p>
-                  <p className="text-sm text-gray-600 mb-1">
-                    Status:{" "}
-                    <span
-                      className={`font-medium ${
-                        c.status === "Approved"
-                          ? "text-green-600"
-                          : c.status === "Pending"
-                          ? "text-yellow-600"
-                          : "text-red-600"
-                      }`}
-                    >
-                      {c.status}
-                    </span>
-                  </p>
-                  <p className="text-xs text-gray-400">
-                    Submitted: {new Date(c.createdAt).toLocaleString()}
-                  </p>
-                </div>
-              ))}
-            </div>
+            <>
+              <div className="bg-white p-6 rounded-2xl shadow-sm border mb-6">
+                <h2 className="text-lg font-semibold mb-2 text-gray-800">
+                  Overall Status: {clearance.overallStatus}
+                </h2>
+                <p className="text-xs text-gray-400">
+                  Submitted: {new Date(clearance.createdAt).toLocaleString()}
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {clearance.departmentStatuses.map((d) => (
+                  <div
+                    key={d.id}
+                    className="bg-white p-6 rounded-2xl shadow-sm border"
+                  >
+                    <h3 className="text-lg font-semibold mb-2 text-gray-800">
+                      {d.department.name} Clearance
+                    </h3>
+                    <p className="text-sm text-gray-600 mb-1">
+                      Status:{" "}
+                      <span
+                        className={`font-medium ${
+                          d.status === "Approved"
+                            ? "text-green-600"
+                            : d.status === "Pending"
+                            ? "text-yellow-600"
+                            : "text-red-600"
+                        }`}
+                      >
+                        {d.status}
+                      </span>
+                    </p>
+                    {d.comment && (
+                      <p className="text-sm text-gray-600 mb-1">
+                        Comment: {d.comment}
+                      </p>
+                    )}
+                    <p className="text-xs text-gray-400">
+                      Updated: {new Date(d.updated_at).toLocaleString()}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </>
           )}
         </main>
       </div>

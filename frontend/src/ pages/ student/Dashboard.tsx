@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ProtectedRoute from "../../components/ProtectedRoute";
+import { User } from "lucide-react";
 
 interface Clearance {
   department: string;
   status: string;
+  name: string;
+  avatarUrl?: string;
 }
 
 interface StudentData {
@@ -12,6 +15,7 @@ interface StudentData {
   studentId: string;
   department: string;
   clearance: Clearance[];
+  avatarUrl?: string;
 }
 
 const StudentDashboard: React.FC = () => {
@@ -25,7 +29,7 @@ const StudentDashboard: React.FC = () => {
         if (!token) return;
 
         const res = await axios.get(
-          "http://localhost:5000/api/student/getdashboard",
+          "http://localhost:5000/api/student/profile",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -94,14 +98,30 @@ const StudentDashboard: React.FC = () => {
               Welcome, <span className="text-blue-600">{student?.name}</span> 👋
             </h1>
             <div className="flex items-center gap-4">
-              <span className="text-gray-600">
-                {student?.department} Student
-              </span>
-              <img
-                src="/placeholder-avatar.png"
-                alt="Profile"
-                className="w-10 h-10 rounded-full border"
-              />
+              <div className="flex items-center gap-4">
+                <div className="text-right">
+                  <h3 className="text-gray-800 font-semibold">
+                    {student?.name || "Loading..."}
+                  </h3>
+                  <p className="text-gray-600 text-sm">
+                    {student?.department ? `${student.department} Student` : ""}
+                  </p>
+                </div>
+                <div className="relative w-30 h-30 rounded-full border flex items-center justify-center bg-gray-100 overflow-hidden">
+                  {student?.avatarUrl ? (
+                    <img
+                      src={student.avatarUrl}
+                      alt="Profile"
+                      className="w-full h-full object-cover"
+                      onError={(e) =>
+                        (e.currentTarget.src = "/placeholder-avatar.png")
+                      }
+                    />
+                  ) : (
+                    <User className="w-6 h-6 text-black" />
+                  )}
+                </div>
+              </div>
             </div>
           </div>
 

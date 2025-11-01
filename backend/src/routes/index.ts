@@ -12,7 +12,7 @@ import cors from "cors";
 const router = Router();
 router.use(
   cors({
-    origin: "http://localhost:3002",
+    origin: "http://localhost:3000",
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,

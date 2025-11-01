@@ -56,7 +56,7 @@ const SubmitClearance: React.FC = () => {
                 🏠 Dashboard
               </a>
               <a
-                href="/student/submit-clearance"
+                href="/student/submitclearance"
                 className="py-2 px-3 rounded-lg bg-blue-100 font-medium text-gray-700"
               >
                 📝 Submit Clearance

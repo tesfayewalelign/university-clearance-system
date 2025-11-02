@@ -678,3 +678,102 @@
 [2025-11-01 10:48:08] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
 [2025-11-01 10:48:20] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
 [2025-11-01 10:48:20] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-01 11:06:46] [31merror[39m: [31mJWT verification failed: [39m
+[31mInvalid `prisma.user.findUnique()` invocation in[39m
+[31m/home/tesfaye/clearance-portal/backend/src/middleware/auth.middleware.ts:45:36[39m
+
+[31m  42   return res.status(401).json({ message: "Invalid token payload" });[39m
+[31m  43 }[39m
+[31m  44 [39m
+[31m→ 45 const user = await prisma.user.findUnique([39m
+[31mCan't reach database server at `localhost:3306`[39m
+
+[31mPlease make sure your database server is running at `localhost:3306`.[39m
+[2025-11-01 11:06:46] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-01 11:06:46] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-01 11:06:46] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-01 11:06:47] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-01 11:06:47] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-01 11:06:48] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-01 11:06:48] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-01 11:06:50] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-01 11:06:50] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-01 11:06:51] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-01 11:06:51] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-01 11:06:51] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-01 11:06:51] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-01 11:06:53] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-01 11:06:53] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-01 11:06:54] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-01 11:06:54] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-01 21:25:43] [31merror[39m: [31m Failed to connect to the database: [39m
+[31mInvalid `prisma.$queryRaw()` invocation:[39m
+
+
+[31mCan't reach database server at `localhost:3306`[39m
+
+[31mPlease make sure your database server is running at `localhost:3306`.[39m
+[2025-11-01 21:30:16] [32minfo[39m: [32m Database connected successfully[39m
+[2025-11-01 21:30:16] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-11-01 21:33:40] [32minfo[39m: [32m Database connected successfully[39m
+[2025-11-01 21:33:40] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-11-01 21:33:45] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-01 21:33:45] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-01 21:33:51] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-01 21:33:51] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-01 21:34:01] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-01 21:34:01] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-02 07:33:36] [32minfo[39m: [32m Database connected successfully[39m
+[2025-11-02 07:33:36] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-11-02 07:43:07] [32minfo[39m: [32m Database connected successfully[39m
+[2025-11-02 07:43:07] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-11-02 07:43:17] [32minfo[39m: [32m Database connected successfully[39m
+[2025-11-02 07:43:17] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-11-02 07:43:56] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-02 07:43:56] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-02 07:44:02] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-02 07:44:02] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-02 07:44:04] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-02 07:44:04] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-02 07:44:38] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-02 07:44:38] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-02 09:06:16] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-02 09:06:16] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-02 09:07:38] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-02 09:07:38] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-02 09:07:39] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-02 09:07:39] [32minfo[39m: [32mAuthenticated user: abebeb13@gmail.com (Role: STUDENT)[39m
+[2025-11-02 09:08:32] [32minfo[39m: [32mAuthenticated user: dagim55@gmail.com (Role: STUDENT)[39m
+[2025-11-02 09:08:32] [32minfo[39m: [32mAuthenticated user: dagim55@gmail.com (Role: STUDENT)[39m
+[2025-11-02 09:08:35] [32minfo[39m: [32mAuthenticated user: dagim55@gmail.com (Role: STUDENT)[39m
+[2025-11-02 09:08:35] [32minfo[39m: [32mAuthenticated user: dagim55@gmail.com (Role: STUDENT)[39m
+[2025-11-02 09:08:38] [32minfo[39m: [32mAuthenticated user: dagim55@gmail.com (Role: STUDENT)[39m
+[2025-11-02 09:08:38] [32minfo[39m: [32mAuthenticated user: dagim55@gmail.com (Role: STUDENT)[39m
+[2025-11-02 09:08:39] [32minfo[39m: [32mAuthenticated user: dagim55@gmail.com (Role: STUDENT)[39m
+[2025-11-02 09:08:39] [32minfo[39m: [32mAuthenticated user: dagim55@gmail.com (Role: STUDENT)[39m
+[2025-11-02 09:08:50] [32minfo[39m: [32mAuthenticated user: dagim55@gmail.com (Role: STUDENT)[39m
+[2025-11-02 09:08:50] [32minfo[39m: [32mStudent ID 6 tried to create a duplicate clearance request[39m
+[2025-11-02 09:08:52] [32minfo[39m: [32mAuthenticated user: dagim55@gmail.com (Role: STUDENT)[39m
+[2025-11-02 09:08:52] [32minfo[39m: [32mStudent ID 6 tried to create a duplicate clearance request[39m
+[2025-11-02 09:08:53] [32minfo[39m: [32mAuthenticated user: dagim55@gmail.com (Role: STUDENT)[39m
+[2025-11-02 09:08:53] [32minfo[39m: [32mAuthenticated user: dagim55@gmail.com (Role: STUDENT)[39m
+[2025-11-02 09:17:22] [32minfo[39m: [32mAuthenticated user: dagim55@gmail.com (Role: STUDENT)[39m
+[2025-11-02 09:17:22] [32minfo[39m: [32mAuthenticated user: dagim55@gmail.com (Role: STUDENT)[39m
+[2025-11-02 09:48:57] [32minfo[39m: [32m Database connected successfully[39m
+[2025-11-02 09:48:57] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-11-02 09:49:22] [32minfo[39m: [32m Database connected successfully[39m
+[2025-11-02 09:49:22] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-11-02 09:49:58] [32minfo[39m: [32m Database connected successfully[39m
+[2025-11-02 09:49:58] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-11-02 09:50:24] [32minfo[39m: [32m Database connected successfully[39m
+[2025-11-02 09:50:24] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-11-02 09:50:48] [32minfo[39m: [32m Database connected successfully[39m
+[2025-11-02 09:50:48] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-11-02 09:52:52] [32minfo[39m: [32m Database connected successfully[39m
+[2025-11-02 09:52:52] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-11-02 09:55:20] [32minfo[39m: [32m Database connected successfully[39m
+[2025-11-02 09:55:20] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-11-02 09:55:23] [32minfo[39m: [32m Database connected successfully[39m
+[2025-11-02 09:55:23] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-11-02 09:58:36] [32minfo[39m: [32m Database connected successfully[39m
+[2025-11-02 09:58:36] [32minfo[39m: [32mServer running at http://localhost:5000[39m

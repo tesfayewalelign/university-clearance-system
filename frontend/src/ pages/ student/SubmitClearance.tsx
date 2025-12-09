@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ProtectedRoute from "../../components/ProtectedRoute";
 import axios from "axios";
+import DarkModeToggle from "../../components/DarkModeToggle";
 
 const SubmitClearance: React.FC = () => {
   const [department, setDepartment] = useState("");
@@ -70,7 +71,8 @@ const SubmitClearance: React.FC = () => {
             </nav>
           </div>
 
-          <div className="px-6 mb-6">
+          <div className="px-6 mb-6 flex flex-col gap-2">
+            <DarkModeToggle />
             <button
               className="w-full py-2 bg-red-500 text-white rounded-lg hover:bg-red-600"
               onClick={() => {

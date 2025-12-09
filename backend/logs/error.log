@@ -43,3 +43,15 @@
 [31mCan't reach database server at `localhost:3306`[39m
 
 [31mPlease make sure your database server is running at `localhost:3306`.[39m
+[2025-12-05 19:45:17] [31merror[39m: [31m Failed to connect to the database: [39m
+[31mInvalid `prisma.$queryRaw()` invocation:[39m
+
+
+[31mCan't reach database server at `localhost:3306`[39m
+
+[31mPlease make sure your database server is running at `localhost:3306`.[39m
+[2025-12-09 09:07:53] [31merror[39m: [31mJWT verification failed: invalid token[39m
+[2025-12-09 09:07:55] [31merror[39m: [31mJWT verification failed: invalid token[39m
+[2025-12-09 09:08:02] [31merror[39m: [31mJWT verification failed: invalid token[39m
+[2025-12-09 09:08:02] [31merror[39m: [31mJWT verification failed: invalid token[39m
+[2025-12-09 09:08:04] [31merror[39m: [31mJWT verification failed: invalid token[39m

@@ -9,51 +9,206 @@ import DarkModeToggle from "../../components/DarkModeToggle";
 interface Clearance {
   department: string;
   status: string;
-  name: string;
-  avatarUrl?: string;
+  comment?: string | null;
+  updated_at?: string | null;
 }
+
 interface StudentData {
-  name: string;
-  studentId: string;
-  department: string;
+  name?: string;
+  studentId?: string;
+  department?: string;
   clearance: Clearance[];
   avatarUrl?: string;
 }
 
+const API = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+
 const StudentDashboard: React.FC = () => {
   const [student, setStudent] = useState<StudentData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [recentUpdates, setRecentUpdates] = useState<string[]>([]);
+  const [error, setError] = useState<string | null>(null);
+
+  function normalizeClearanceFromProfile(raw: any): Clearance[] {
+    const candidates = [
+      raw?.clearanceData?.departmentStatuses,
+      raw?.data?.clearanceData?.departmentStatuses,
+      raw?.data?.departmentStatuses,
+      raw?.departmentStatuses,
+      raw?.clearance,
+      raw?.data?.clearance,
+      raw?.data,
+    ];
+
+    const found = candidates.find((c) => Array.isArray(c)) || [];
+
+    return (found as any[])
+      .map((it) => {
+        if (!it) return null;
+
+        let status = it.status ?? "Pending";
+        status =
+          status.toString().trim().toLowerCase() === "approved"
+            ? "Approved"
+            : "Pending";
+
+        let department =
+          typeof it.department === "object"
+            ? it.department.name ?? it.department.title ?? "Unknown"
+            : it.department ?? it.name ?? "Unknown";
+
+        return {
+          department:
+            it.department?.name ?? it.department ?? it.name ?? "Unknown",
+          status:
+            (it.status ?? "Pending").toString().trim().toLowerCase() ===
+            "approved"
+              ? "Approved"
+              : "Pending",
+          comment: it.comment ?? null,
+          updated_at: it.updated_at ?? it.updatedAt ?? null,
+        } as Clearance;
+      })
+      .filter(Boolean) as Clearance[];
+  }
+
+  const fetchStudentData = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        setError("Not authenticated");
+        setLoading(false);
+        return;
+      }
+
+      const res = await axios.get(`${API}/api/student/profile`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+
+      console.debug("GET /student/profile response:", res.data);
+
+      const raw = res.data;
+      const clearance = normalizeClearanceFromProfile(raw);
+
+      setStudent({
+        name: raw.name ?? raw.data?.name ?? raw.studentName,
+        studentId: raw.studentId ?? raw.data?.studentId ?? raw.id,
+        department: raw.department ?? raw.data?.department,
+        avatarUrl: raw.avatarUrl ?? raw.data?.avatarUrl,
+        clearance,
+      });
+    } catch (err: any) {
+      console.error("fetchStudentData error:", err);
+      setError(
+        err?.response?.data?.message ??
+          err?.message ??
+          "Failed to fetch profile, check console"
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const fetchStudentData = async () => {
-      try {
-        const token = localStorage.getItem("token");
-        if (!token) return;
-
-        const res = await axios.get(
-          "http://localhost:5000/api/student/profile",
-          {
-            headers: { Authorization: `Bearer ${token}` },
-          }
-        );
-
-        setStudent(res.data);
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setLoading(false);
-      }
-    };
     fetchStudentData();
   }, []);
 
-  if (loading) return <div className="p-10 text-center">Loading...</div>;
+  useEffect(() => {
+    if (!student) return;
+    const updates = student.clearance.map((c) =>
+      c.status === "Approved"
+        ? `✅ ${c.department} Clearance Approved`
+        : `🕒 ${c.department} Clearance Pending`
+    );
+    setRecentUpdates([...updates].reverse());
+  }, [student]);
 
-  const totalClearances = student?.clearance?.length || 0;
-  const approvedClearances =
-    student?.clearance?.filter((c) => c.status === "Approved").length || 0;
+  if (loading) {
+    return <div className="p-10 text-center">Loading...</div>;
+  }
+
+  if (error) {
+    return (
+      <div className="p-6 text-red-600">Error loading profile: {error}</div>
+    );
+  }
+
+  const normalizedClearances: Clearance[] =
+    student?.clearance?.map((c) => {
+      let departmentName: string;
+
+      if (typeof c.department === "object" && c.department !== null) {
+        departmentName =
+          (c.department as any).name ??
+          (c.department as any).title ??
+          "Unknown";
+      } else {
+        departmentName = c.department ?? "Unknown";
+      }
+
+      return {
+        department: departmentName,
+        status:
+          c.status?.toString().trim().toLowerCase() === "approved"
+            ? "Approved"
+            : "Pending",
+        comment: c.comment ?? null,
+        updated_at: c.updated_at ?? null,
+      };
+    }) || [];
+
+  const totalClearances = normalizedClearances.length;
+  const approvedClearances = normalizedClearances.filter(
+    (c) => c.status === "Approved"
+  ).length;
+  const pendingClearances = totalClearances - approvedClearances;
   const progress =
     totalClearances > 0 ? (approvedClearances / totalClearances) * 100 : 0;
+
+  const handleApproval = async (departmentName: string) => {
+    try {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        setError("Not authenticated");
+        return;
+      }
+
+      const res = await axios.put(
+        `${API}/api/student/clearance/update/${student?.studentId}`,
+        { department: departmentName, status: "Approved" },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+
+      console.log("UPDATE RESPONSE:", res.data);
+
+      const updatedData = res.data.data;
+
+      if (!updatedData || !updatedData.departmentStatuses) {
+        return fetchStudentData();
+      }
+
+      const normalized = normalizeClearanceFromProfile(updatedData);
+
+      setStudent((prev) =>
+        prev
+          ? {
+              ...prev,
+              clearance: prev.clearance.map((c) => {
+                const found = normalized.find(
+                  (n) => n.department === c.department
+                );
+                return found ? { ...c, ...found } : c;
+              }),
+            }
+          : prev
+      );
+    } catch (err: any) {
+      console.error("handleApproval error:", err);
+      setError(err?.response?.data?.message ?? "Failed to update clearance");
+    }
+  };
 
   return (
     <ProtectedRoute>
@@ -63,7 +218,6 @@ const StudentDashboard: React.FC = () => {
             <h2 className="text-2xl font-bold text-center mt-6 mb-8 text-blue-700 dark:text-blue-400">
               Clearance Portal
             </h2>
-
             <nav className="flex flex-col gap-3 px-6">
               {["Dashboard", "SubmitClearance", "TrackStatus"].map(
                 (page, i) => (
@@ -78,7 +232,6 @@ const StudentDashboard: React.FC = () => {
               )}
             </nav>
           </div>
-
           <div className="px-6 mb-6 flex flex-col gap-2">
             <DarkModeToggle />
             <button
@@ -149,7 +302,6 @@ const StudentDashboard: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6"
           >
-            {/* Student Info */}
             <div className="bg-blue-600 text-white p-6 rounded-2xl shadow flex items-center gap-4">
               <BookOpen className="w-8 h-8" />
               <div>
@@ -197,7 +349,7 @@ const StudentDashboard: React.FC = () => {
               <div
                 className="bg-blue-600 h-4 rounded-full transition-all duration-500"
                 style={{ width: `${progress}%` }}
-              ></div>
+              />
             </div>
             <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
               {Math.round(progress)}% Completed
@@ -240,6 +392,14 @@ const StudentDashboard: React.FC = () => {
                       {c.status}
                     </span>
                   </p>
+                  {c.status === "Pending" && (
+                    <button
+                      onClick={() => handleApproval(c.department)}
+                      className="mt-2 py-1 px-3 bg-blue-600 text-white rounded hover:bg-blue-700"
+                    >
+                      Approve
+                    </button>
+                  )}
                 </motion.div>
               ))
             ) : (
@@ -259,9 +419,9 @@ const StudentDashboard: React.FC = () => {
               Recent Updates
             </h3>
             <ul className="space-y-3 text-gray-600 dark:text-gray-300">
-              <li>✅ Library Clearance Approved</li>
-              <li>🕒 Finance Office request still pending</li>
-              <li>📢 Admin posted new notice for final year students</li>
+              {recentUpdates.length
+                ? recentUpdates.map((update, i) => <li key={i}>{update}</li>)
+                : "No recent updates."}
             </ul>
           </motion.section>
         </main>

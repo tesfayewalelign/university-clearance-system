@@ -1,33 +1,16 @@
-import { useEffect, useState } from "react";
+"use client";
+import { useContext } from "react";
+import { ThemeContext } from "./ThemeContext";
 
 export default function DarkModeToggle() {
-  const [dark, setDark] = useState(false);
-
-  useEffect(() => {
-    const stored = localStorage.getItem("dark-mode");
-    if (stored === "true") {
-      setDark(true);
-      document.documentElement.classList.add("dark");
-    }
-  }, []);
-
-  const toggleDarkMode = () => {
-    setDark(!dark);
-    if (!dark) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("dark-mode", "true");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("dark-mode", "false");
-    }
-  };
+  const { darkMode, toggleDarkMode } = useContext(ThemeContext);
 
   return (
     <button
       onClick={toggleDarkMode}
-      className="px-3 py-1 border rounded text-sm"
+      className="px-3 py-1 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition"
     >
-      {dark ? "☀️ Light" : "🌙 Dark"}
+      {darkMode ? "🌙 Dark" : "☀️ Light"}
     </button>
   );
 }

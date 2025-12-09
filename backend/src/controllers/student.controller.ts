@@ -1,5 +1,6 @@
 import type { Request, Response } from "express";
 import prisma from "../config/db.js";
+import { error } from "console";
 
 export const getMyClearanceStatus = async (req: Request, res: Response) => {
   try {
@@ -84,5 +85,50 @@ export const getStudentProfile = async (req: Request, res: Response) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server error" });
+  }
+};
+
+export const updateClearanceStatus = async (req: Request, res: Response) => {
+  try {
+    const studentId = req.user?.id;
+    const { department } = req.params;
+
+    if (!studentId) return res.status(401).json({ message: "Unauthorized" });
+
+    const clearanceRequest = await prisma.clearanceRequest.findFirst({
+      where: { studentId },
+      include: {
+        departmentStatuses: { include: { department: true } },
+      },
+    });
+
+    if (!clearanceRequest)
+      return res.status(404).json({ message: "Clearance request not found" });
+
+    const deptStatus = clearanceRequest.departmentStatuses.find(
+      (d) => d.department.name === department
+    );
+
+    if (!deptStatus)
+      return res.status(404).json({ message: "Department not found" });
+
+    const updatedDeptStatus = await prisma.departmentClearanceStatus.update({
+      where: { id: deptStatus.id },
+      data: { status: "Approved" },
+    });
+
+    const updatedRequest = await prisma.clearanceRequest.findUnique({
+      where: { id: clearanceRequest.id },
+      include: { departmentStatuses: true },
+    });
+
+    res.status(200).json({
+      message: "Department clearance approved",
+      updatedDeptStatus,
+      updatedRequest,
+    });
+  } catch (err: any) {
+    console.error("Error updating clearance status:", err);
+    res.status(500).json({ message: "Internal server error" });
   }
 };

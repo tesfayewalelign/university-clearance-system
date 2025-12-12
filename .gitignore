@@ -7,3 +7,4 @@ npm-debug.log
 prisma/migrations/
 prisma/seed.ts
 .vs code 
+.next.config.js

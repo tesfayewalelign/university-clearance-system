@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../../utils/axios";
 import ProtectedRoute from "../../components/ProtectedRoute";
 import { User, Bell, BookOpen, ClipboardCheck } from "lucide-react";
 import { motion } from "framer-motion";

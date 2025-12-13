@@ -63,7 +63,6 @@ export default function AdminDashboard() {
 
   return (
     <div className="flex min-h-screen bg-gray-100">
-      {/* Sidebar */}
       <aside className="w-64 bg-white shadow-lg p-5">
         <h1 className="text-xl font-bold mb-6">Admin Panel</h1>
 
@@ -105,11 +104,9 @@ export default function AdminDashboard() {
         </ul>
       </aside>
 
-      {/* Main Dashboard */}
       <main className="flex-1 p-8">
         <h2 className="text-2xl font-semibold mb-6">Welcome, Admin</h2>
 
-        {/* Stats Cards */}
         <div className="grid grid-cols-4 gap-6 mb-10">
           <div className="bg-white p-6 rounded-xl shadow">
             <h3 className="text-gray-600">Total Requests</h3>
@@ -132,7 +129,6 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        {/* Recent Requests Table */}
         <h3 className="text-xl font-semibold mb-4">
           Recent Clearance Requests
         </h3>

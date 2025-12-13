@@ -1,30 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,    
-  swcMinify: true,           
-
-
   webpack: (config, { isServer }) => {
     if (!isServer) {
-     
-      config.resolve.fallback = {
-        fs: false,
-        stream: false,
-        zlib: false,
-      };
+      config.resolve.alias['gzip-size'] = false;
+      config.resolve.alias['fs'] = false;
+      config.resolve.alias['stream'] = false;
+      config.resolve.alias['zlib'] = false;
     }
-
     return config;
-  },
-
- 
-  env: {
-    NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000",
-  },
-
- 
-  images: {
-    domains: ["localhost"], 
   },
 };
 

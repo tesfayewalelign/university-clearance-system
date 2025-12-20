@@ -1150,3 +1150,12 @@
 [2025-12-19 15:52:21] [32minfo[39m: [32mServer running at http://localhost:5000[39m
 [2025-12-19 15:54:19] [32minfo[39m: [32m Database connected successfully[39m
 [2025-12-19 15:54:19] [32minfo[39m: [32mServer running at http://localhost:5000[39m
+[2025-12-19 20:18:26] [31merror[39m: [31m Failed to connect to the database: [39m
+[31mInvalid `prisma.$queryRaw()` invocation:[39m
+
+
+[31mCan't reach database server at `localhost:3306`[39m
+
+[31mPlease make sure your database server is running at `localhost:3306`.[39m
+[2025-12-19 20:20:01] [32minfo[39m: [32m Database connected successfully[39m
+[2025-12-19 20:20:01] [32minfo[39m: [32mServer running at http://localhost:5000[39m

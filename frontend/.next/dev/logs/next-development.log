@@ -1,85 +1,138 @@
-[00:00:23.068] Server  LOG     ✓ Ready in 16.4s
-[00:00:51.312] Server  LOG     ○ Compiling / ...
-[00:01:20.959] Server  LOG     API URL: "http://localhost:5000"
-[00:01:33.768] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:33.768] Browser LOG     API URL: http://localhost:5000
-[00:01:33.796] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:33.796] Browser LOG     API URL: http://localhost:5000
-[00:01:35.099] Browser LOG     API URL: http://localhost:5000
-[00:01:35.099] Browser LOG     API URL: http://localhost:5000
-[00:01:35.908] Browser LOG     API URL: http://localhost:5000
-[00:01:35.908] Browser LOG     API URL: http://localhost:5000
-[00:01:43.137] Browser LOG     API URL: http://localhost:5000
-[00:01:43.137] Browser LOG     API URL: http://localhost:5000
-[00:01:43.137] Browser LOG     API URL: http://localhost:5000
-[00:01:43.137] Browser LOG     API URL: http://localhost:5000
-[00:01:43.137] Browser LOG     API URL: http://localhost:5000
-[00:01:43.137] Browser LOG     API URL: http://localhost:5000
-[00:01:43.137] Browser LOG     API URL: http://localhost:5000
-[00:01:43.137] Browser LOG     API URL: http://localhost:5000
-[00:01:43.137] Browser LOG     API URL: http://localhost:5000
-[00:01:43.137] Browser LOG     API URL: http://localhost:5000
-[00:01:44.531] Browser LOG     API URL: http://localhost:5000
-[00:01:44.531] Browser LOG     API URL: http://localhost:5000
-[00:01:44.531] Browser LOG     API URL: http://localhost:5000
-[00:01:44.531] Browser LOG     API URL: http://localhost:5000
-[00:01:45.339] Browser LOG     API URL: http://localhost:5000
-[00:01:45.339] Browser LOG     API URL: http://localhost:5000
-[00:01:45.931] Browser LOG     API URL: http://localhost:5000
-[00:01:45.931] Browser LOG     API URL: http://localhost:5000
-[00:01:46.215] Browser LOG     API URL: http://localhost:5000
-[00:01:46.215] Browser LOG     API URL: http://localhost:5000
-[00:01:46.430] Browser LOG     API URL: http://localhost:5000
-[00:01:46.430] Browser LOG     API URL: http://localhost:5000
-[00:01:46.627] Browser LOG     API URL: http://localhost:5000
-[00:01:46.627] Browser LOG     API URL: http://localhost:5000
-[00:01:46.972] Browser LOG     API URL: http://localhost:5000
-[00:01:46.972] Browser LOG     API URL: http://localhost:5000
-[00:01:47.364] Browser LOG     API URL: http://localhost:5000
-[00:01:47.364] Browser LOG     API URL: http://localhost:5000
-[00:01:47.641] Browser LOG     API URL: http://localhost:5000
-[00:01:47.641] Browser LOG     API URL: http://localhost:5000
-[00:01:47.835] Browser LOG     API URL: http://localhost:5000
-[00:01:47.835] Browser LOG     API URL: http://localhost:5000
-[00:01:48.063] Browser LOG     API URL: http://localhost:5000
-[00:01:48.063] Browser LOG     API URL: http://localhost:5000
-[00:01:51.845] Browser LOG     API URL: http://localhost:5000
-[00:01:51.845] Browser LOG     API URL: http://localhost:5000
-[00:01:52.707] Browser LOG     API URL: http://localhost:5000
-[00:01:52.707] Browser LOG     API URL: http://localhost:5000
-[00:01:53.146] Browser LOG     API URL: http://localhost:5000
-[00:01:53.146] Browser LOG     API URL: http://localhost:5000
-[00:01:53.621] Browser LOG     API URL: http://localhost:5000
-[00:01:53.622] Browser LOG     API URL: http://localhost:5000
-[00:01:53.908] Browser LOG     API URL: http://localhost:5000
-[00:01:53.908] Browser LOG     API URL: http://localhost:5000
-[00:01:55.280] Browser LOG     API URL: http://localhost:5000
-[00:01:55.280] Browser LOG     API URL: http://localhost:5000
-[00:01:55.658] Browser LOG     API URL: http://localhost:5000
-[00:01:55.658] Browser LOG     API URL: http://localhost:5000
-[00:01:55.958] Browser LOG     API URL: http://localhost:5000
-[00:01:55.958] Browser LOG     API URL: http://localhost:5000
-[00:01:56.282] Browser LOG     API URL: http://localhost:5000
-[00:01:56.282] Browser LOG     API URL: http://localhost:5000
-[00:01:56.567] Browser LOG     API URL: http://localhost:5000
-[00:01:56.567] Browser LOG     API URL: http://localhost:5000
-[00:01:57.737] Browser LOG     API URL: http://localhost:5000
-[00:01:57.737] Browser LOG     API URL: http://localhost:5000
-[00:02:08.238] Server  LOG     ○ Compiling /_not-found ...
-[00:02:40.913] Browser LOG     API URL: http://localhost:5000
-[00:02:40.913] Browser LOG     API URL: http://localhost:5000
-[00:03:22.899] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:30.503] Server  LOG     API URL: "http://localhost:5000"
-[00:03:43.321] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:03:43.321] Browser LOG     API URL: http://localhost:5000
-[00:03:45.258] Browser LOG     API URL: http://localhost:5000
-[00:03:45.258] Browser LOG     API URL: http://localhost:5000
-[00:37:52.679] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:39:22.914] Browser LOG     API URL: http://localhost:5000
-[00:39:22.914] Browser LOG     API URL: http://localhost:5000
-[00:39:31.903] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:39:33.046] Server  LOG     API URL: "http://localhost:5000"
-[00:39:50.813] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:39:53.095] Browser LOG     API URL: http://localhost:5000
-[00:39:54.477] Browser LOG     API URL: http://localhost:5000
-[00:39:54.477] Browser LOG     API URL: http://localhost:5000
+[00:00:21.396] Server  LOG     ✓ Ready in 16s
+[00:00:24.486] Server  LOG     ○ Compiling / ...
+[00:00:35.286] Server  LOG     API URL: "http://localhost:5000"
+[00:00:37.216] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:37.216] Browser LOG     API URL: http://localhost:5000
+[00:00:37.400] Browser LOG     API URL: http://localhost:5000
+[00:00:37.401] Browser LOG     API URL: http://localhost:5000
+[00:00:52.865] Browser LOG     API URL: http://localhost:5000
+[00:00:52.865] Browser LOG     API URL: http://localhost:5000
+[00:00:52.865] Browser LOG     API URL: http://localhost:5000
+[00:00:52.865] Browser LOG     API URL: http://localhost:5000
+[00:00:53.593] Browser LOG     API URL: http://localhost:5000
+[00:00:53.593] Browser LOG     API URL: http://localhost:5000
+[00:00:54.046] Browser LOG     API URL: http://localhost:5000
+[00:00:54.046] Browser LOG     API URL: http://localhost:5000
+[00:00:54.314] Browser LOG     API URL: http://localhost:5000
+[00:00:54.314] Browser LOG     API URL: http://localhost:5000
+[00:00:55.058] Browser LOG     API URL: http://localhost:5000
+[00:00:55.058] Browser LOG     API URL: http://localhost:5000
+[00:00:55.216] Browser LOG     API URL: http://localhost:5000
+[00:00:55.216] Browser LOG     API URL: http://localhost:5000
+[00:00:55.763] Browser LOG     API URL: http://localhost:5000
+[00:00:55.764] Browser LOG     API URL: http://localhost:5000
+[00:00:57.649] Browser LOG     API URL: http://localhost:5000
+[00:00:57.649] Browser LOG     API URL: http://localhost:5000
+[00:00:57.955] Browser LOG     API URL: http://localhost:5000
+[00:00:57.955] Browser LOG     API URL: http://localhost:5000
+[00:00:58.156] Browser LOG     API URL: http://localhost:5000
+[00:00:58.156] Browser LOG     API URL: http://localhost:5000
+[00:00:58.350] Browser LOG     API URL: http://localhost:5000
+[00:00:58.350] Browser LOG     API URL: http://localhost:5000
+[00:00:58.786] Browser LOG     API URL: http://localhost:5000
+[00:00:58.786] Browser LOG     API URL: http://localhost:5000
+[00:00:59.081] Browser LOG     API URL: http://localhost:5000
+[00:00:59.081] Browser LOG     API URL: http://localhost:5000
+[00:00:59.325] Browser LOG     API URL: http://localhost:5000
+[00:00:59.325] Browser LOG     API URL: http://localhost:5000
+[00:00:59.527] Browser LOG     API URL: http://localhost:5000
+[00:00:59.528] Browser LOG     API URL: http://localhost:5000
+[00:00:59.751] Browser LOG     API URL: http://localhost:5000
+[00:00:59.751] Browser LOG     API URL: http://localhost:5000
+[00:01:02.353] Browser LOG     API URL: http://localhost:5000
+[00:01:02.353] Browser LOG     API URL: http://localhost:5000
+[00:01:03.179] Browser LOG     API URL: http://localhost:5000
+[00:01:03.179] Browser LOG     API URL: http://localhost:5000
+[00:01:03.523] Browser LOG     API URL: http://localhost:5000
+[00:01:03.523] Browser LOG     API URL: http://localhost:5000
+[00:01:04.030] Browser LOG     API URL: http://localhost:5000
+[00:01:04.030] Browser LOG     API URL: http://localhost:5000
+[00:01:04.315] Browser LOG     API URL: http://localhost:5000
+[00:01:04.315] Browser LOG     API URL: http://localhost:5000
+[00:01:05.095] Browser LOG     API URL: http://localhost:5000
+[00:01:05.095] Browser LOG     API URL: http://localhost:5000
+[00:01:05.876] Browser LOG     API URL: http://localhost:5000
+[00:01:05.876] Browser LOG     API URL: http://localhost:5000
+[00:01:06.170] Browser LOG     API URL: http://localhost:5000
+[00:01:06.170] Browser LOG     API URL: http://localhost:5000
+[00:01:06.506] Browser LOG     API URL: http://localhost:5000
+[00:01:06.506] Browser LOG     API URL: http://localhost:5000
+[00:01:06.818] Browser LOG     API URL: http://localhost:5000
+[00:01:06.818] Browser LOG     API URL: http://localhost:5000
+[00:01:07.974] Browser LOG     API URL: http://localhost:5000
+[00:01:07.974] Browser LOG     API URL: http://localhost:5000
+[00:01:22.325] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:47.237] Server  LOG     API URL: "http://localhost:5000"
+[00:03:49.375] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:49.375] Browser LOG     API URL: http://localhost:5000
+[00:03:49.587] Browser LOG     API URL: http://localhost:5000
+[00:03:49.587] Browser LOG     API URL: http://localhost:5000
+[00:03:51.909] Browser LOG     API URL: http://localhost:5000
+[00:03:51.909] Browser LOG     API URL: http://localhost:5000
+[00:03:52.120] Browser LOG     API URL: http://localhost:5000
+[00:03:52.120] Browser LOG     API URL: http://localhost:5000
+[00:03:52.306] Browser LOG     API URL: http://localhost:5000
+[00:03:52.306] Browser LOG     API URL: http://localhost:5000
+[00:03:52.764] Browser LOG     API URL: http://localhost:5000
+[00:03:52.764] Browser LOG     API URL: http://localhost:5000
+[00:03:53.025] Browser LOG     API URL: http://localhost:5000
+[00:03:53.025] Browser LOG     API URL: http://localhost:5000
+[00:03:53.795] Browser LOG     API URL: http://localhost:5000
+[00:03:53.795] Browser LOG     API URL: http://localhost:5000
+[00:03:56.015] Browser LOG     API URL: http://localhost:5000
+[00:03:56.015] Browser LOG     API URL: http://localhost:5000
+[00:03:56.269] Browser LOG     API URL: http://localhost:5000
+[00:03:56.269] Browser LOG     API URL: http://localhost:5000
+[00:03:56.451] Browser LOG     API URL: http://localhost:5000
+[00:03:56.451] Browser LOG     API URL: http://localhost:5000
+[00:03:57.052] Browser LOG     API URL: http://localhost:5000
+[00:03:57.052] Browser LOG     API URL: http://localhost:5000
+[00:03:57.699] Browser LOG     API URL: http://localhost:5000
+[00:03:57.699] Browser LOG     API URL: http://localhost:5000
+[00:03:58.079] Browser LOG     API URL: http://localhost:5000
+[00:03:58.079] Browser LOG     API URL: http://localhost:5000
+[00:03:58.291] Browser LOG     API URL: http://localhost:5000
+[00:03:58.291] Browser LOG     API URL: http://localhost:5000
+[00:03:58.442] Browser LOG     API URL: http://localhost:5000
+[00:03:58.442] Browser LOG     API URL: http://localhost:5000
+[00:03:58.834] Browser LOG     API URL: http://localhost:5000
+[00:03:58.834] Browser LOG     API URL: http://localhost:5000
+[00:03:59.130] Browser LOG     API URL: http://localhost:5000
+[00:03:59.130] Browser LOG     API URL: http://localhost:5000
+[00:03:59.423] Browser LOG     API URL: http://localhost:5000
+[00:03:59.423] Browser LOG     API URL: http://localhost:5000
+[00:03:59.610] Browser LOG     API URL: http://localhost:5000
+[00:03:59.610] Browser LOG     API URL: http://localhost:5000
+[00:03:59.823] Browser LOG     API URL: http://localhost:5000
+[00:03:59.823] Browser LOG     API URL: http://localhost:5000
+[00:04:02.478] Browser LOG     API URL: http://localhost:5000
+[00:04:02.478] Browser LOG     API URL: http://localhost:5000
+[00:04:03.523] Browser LOG     API URL: http://localhost:5000
+[00:04:03.524] Browser LOG     API URL: http://localhost:5000
+[00:04:03.766] Browser LOG     API URL: http://localhost:5000
+[00:04:03.766] Browser LOG     API URL: http://localhost:5000
+[00:04:04.262] Browser LOG     API URL: http://localhost:5000
+[00:04:04.262] Browser LOG     API URL: http://localhost:5000
+[00:04:04.514] Browser LOG     API URL: http://localhost:5000
+[00:04:04.514] Browser LOG     API URL: http://localhost:5000
+[00:04:05.159] Browser LOG     API URL: http://localhost:5000
+[00:04:05.159] Browser LOG     API URL: http://localhost:5000
+[00:04:05.824] Browser LOG     API URL: http://localhost:5000
+[00:04:05.824] Browser LOG     API URL: http://localhost:5000
+[00:04:06.171] Browser LOG     API URL: http://localhost:5000
+[00:04:06.172] Browser LOG     API URL: http://localhost:5000
+[00:04:06.493] Browser LOG     API URL: http://localhost:5000
+[00:04:06.493] Browser LOG     API URL: http://localhost:5000
+[00:04:06.789] Browser LOG     API URL: http://localhost:5000
+[00:04:06.789] Browser LOG     API URL: http://localhost:5000
+[00:04:08.517] Browser LOG     API URL: http://localhost:5000
+[00:04:08.517] Browser LOG     API URL: http://localhost:5000
+[00:04:09.445] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:29.581] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:13.536] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:41.461] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:00.704] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:10:32.438] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:29.503] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:12:33.670] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:13:19.383] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

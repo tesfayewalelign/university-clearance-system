@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import axios from "../../utils/axios";
+import axios from "axios";
 import Modal from "../../components/Modal";
 
 interface Department {

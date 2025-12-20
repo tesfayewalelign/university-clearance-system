@@ -1,11 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Use the standard 'webpack' key for the --webpack engine
   webpack: (config, { isServer }) => {
     if (!isServer) {
-      config.resolve.alias['gzip-size'] = false;
-      config.resolve.alias['fs'] = false;
-      config.resolve.alias['stream'] = false;
-      config.resolve.alias['zlib'] = false;
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        stream: false,
+        zlib: false,
+        path: false,
+      };
     }
     return config;
   },

@@ -1,5 +1,7 @@
+"use client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 
 import Login from "../ pages/auth/Login";
 import StudentDashboard from "../ pages/ student/Dashboard";
@@ -10,7 +12,16 @@ import StudentsManagement from "../ pages/admin/studentManagment";
 import EditDepartment from "../ pages/admin/departmentById";
 
 export default function AppRoutes() {
-  const role = localStorage.getItem("role");
+  const [role, setRole] = useState<string | null>(null);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    const savedRole = localStorage.getItem("role");
+    setRole(savedRole);
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) return null;
 
   return (
     <BrowserRouter>
@@ -32,8 +43,6 @@ export default function AppRoutes() {
           <>
             <Route path="/admin/dashboard" element={<AdminDashboard />} />
             <Route path="/admin/students" element={<StudentsManagement />} />
-            <Route path="/admin/departments" element={<StudentsManagement />} />
-
             <Route path="/admin/departments" element={<EditDepartment />} />
           </>
         )}

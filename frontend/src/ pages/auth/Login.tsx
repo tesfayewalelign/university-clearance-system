@@ -1,12 +1,17 @@
+"use client";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
+
 import axios from "axios";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const navigate = useNavigate();
+
+  const router = useRouter();
+
+  console.log("API URL:", process.env.NEXT_PUBLIC_API_URL);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -15,22 +20,17 @@ export default function Login() {
     try {
       const response = await axios.post(
         "http://localhost:5000/api/auth/login",
-        {
-          email,
-          password,
-        },
-        {
-          withCredentials: true,
-        }
+        { email, password },
+        { withCredentials: true }
       );
 
       const { token, role } = response.data;
       localStorage.setItem("token", token);
       localStorage.setItem("role", role);
 
-      if (role === "STUDENT") navigate("student/dashboard");
-      else if (role === "OFFICER") navigate("/officer/dashboard");
-      else if (role === "ADMIN") navigate("/admin/dashboard");
+      if (role === "STUDENT") router.push("/student/dashboard");
+      else if (role === "OFFICER") router.push("/officer/dashboard");
+      else if (role === "ADMIN") router.push("/admin/dashboard");
     } catch (err: any) {
       setError(err.response?.data?.message || "Login failed");
     }
@@ -103,3 +103,4 @@ export default function Login() {
     </div>
   );
 }
+console.log("API URL:", process.env.NEXT_PUBLIC_API_URL);

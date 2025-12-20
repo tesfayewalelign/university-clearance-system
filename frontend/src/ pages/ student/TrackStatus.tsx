@@ -1,6 +1,7 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import ProtectedRoute from "../../components/ProtectedRoute";
-import axios from "../../utils/axios";
+import axios from "axios";
 import DarkModeToggle from "../../components/DarkModeToggle";
 interface DepartmentStatus {
   id: number;

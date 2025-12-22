@@ -4,7 +4,8 @@ import { Navigate } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 
 import Login from "../ pages/auth/Login";
-import StudentDashboard from "../ pages/ student/Dashboard";
+
+import StudentDashboard from "../ pages/ student/dashboard";
 import SubmitClearance from "../ pages/ student/SubmitClearance";
 import TrackStatus from "../ pages/ student/TrackStatus";
 import AdminDashboard from "../ pages/admin/Dashboard";
@@ -28,7 +29,7 @@ export default function AppRoutes() {
       <Routes>
         <Route path="/" element={<Login />} />
 
-        {role === "student" && (
+        {role === "STUDENT" && (
           <>
             <Route path="/student/dashboard" element={<StudentDashboard />} />
             <Route
@@ -39,13 +40,14 @@ export default function AppRoutes() {
           </>
         )}
 
-        {role === "admin" && (
-          <>
-            <Route path="/admin/dashboard" element={<AdminDashboard />} />
-            <Route path="/admin/students" element={<StudentsManagement />} />
-            <Route path="/admin/departments" element={<EditDepartment />} />
-          </>
-        )}
+        {role === "ADMIN" ||
+          (role === "SUPER_ADMIN" && (
+            <>
+              <Route path="/admin/dashboard" element={<AdminDashboard />} />
+              <Route path="/admin/students" element={<StudentsManagement />} />
+              <Route path="/admin/departments" element={<EditDepartment />} />
+            </>
+          ))}
 
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>

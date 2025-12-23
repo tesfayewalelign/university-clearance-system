@@ -1,0 +1,59 @@
+[00:00:02.527] Server  LOG     ✓ Ready in 2.2s
+[00:00:02.597] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:00:02.608] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:00:05.038] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:00:05.046] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:00:05.631] Server  LOG     ○ Compiling / ...
+[00:00:06.548] Server  LOG     API URL: "http://localhost:5000"
+[00:00:08.643] Browser LOG     API URL: http://localhost:5000
+[00:00:09.245] Browser LOG     API URL: http://localhost:5000
+[00:00:10.843] Browser LOG     API URL: http://localhost:5000
+[00:00:11.338] Browser LOG     API URL: http://localhost:5000
+[00:00:13.311] Browser LOG     API URL: http://localhost:5000
+[00:00:13.311] Browser LOG     API URL: http://localhost:5000
+[00:00:13.513] Browser LOG     API URL: http://localhost:5000
+[00:00:13.997] Browser LOG     API URL: http://localhost:5000
+[00:00:14.556] Browser LOG     API URL: http://localhost:5000
+[00:00:14.847] Browser LOG     API URL: http://localhost:5000
+[00:00:15.006] Browser LOG     API URL: http://localhost:5000
+[00:00:15.308] Browser LOG     API URL: http://localhost:5000
+[00:00:15.524] Browser LOG     API URL: http://localhost:5000
+[00:00:16.012] Browser LOG     API URL: http://localhost:5000
+[00:00:16.302] Browser LOG     API URL: http://localhost:5000
+[00:00:16.302] Browser LOG     API URL: http://localhost:5000
+[00:00:16.531] Browser LOG     API URL: http://localhost:5000
+[00:00:16.916] Browser LOG     API URL: http://localhost:5000
+[00:00:17.161] Browser LOG     API URL: http://localhost:5000
+[00:00:17.615] Browser LOG     API URL: http://localhost:5000
+[00:00:18.187] Browser LOG     API URL: http://localhost:5000
+[00:00:18.766] Browser LOG     API URL: http://localhost:5000
+[00:00:19.199] Browser LOG     API URL: http://localhost:5000
+[00:00:19.399] Browser LOG     API URL: http://localhost:5000
+[00:00:19.581] Browser LOG     API URL: http://localhost:5000
+[00:00:20.438] Browser LOG     API URL: http://localhost:5000
+[00:00:20.684] Browser LOG     API URL: http://localhost:5000
+[00:00:21.163] Browser LOG     API URL: http://localhost:5000
+[00:00:21.351] Browser LOG     API URL: http://localhost:5000
+[00:00:21.548] Browser LOG     API URL: http://localhost:5000
+[00:00:25.527] Browser LOG     API URL: http://localhost:5000
+[00:00:26.172] Browser LOG     API URL: http://localhost:5000
+[00:00:26.670] Browser LOG     API URL: http://localhost:5000
+[00:00:27.493] Browser LOG     API URL: http://localhost:5000
+[00:00:27.717] Browser LOG     API URL: http://localhost:5000
+[00:00:28.275] Browser LOG     API URL: http://localhost:5000
+[00:00:28.925] Browser LOG     API URL: http://localhost:5000
+[00:00:29.203] Browser LOG     API URL: http://localhost:5000
+[00:00:29.469] Browser LOG     API URL: http://localhost:5000
+[00:00:29.888] Browser LOG     API URL: http://localhost:5000
+[00:00:30.192] Browser LOG     API URL: http://localhost:5000
+[00:00:30.864] Browser LOG     API URL: http://localhost:5000
+[00:00:31.241] Browser LOG     API URL: http://localhost:5000
+[00:00:31.845] Browser LOG     API URL: http://localhost:5000
+[00:00:32.038] Browser LOG     API URL: http://localhost:5000
+[00:00:32.350] Browser LOG     API URL: http://localhost:5000
+[00:00:33.696] Browser LOG     API URL: http://localhost:5000
+[00:00:34.694] Browser LOG     {}
+[00:00:47.046] Browser LOG     {}
+[00:02:35.351] Browser LOG     {}
+[00:03:04.744] Browser LOG     {}
+[00:03:10.675] Browser LOG     {}

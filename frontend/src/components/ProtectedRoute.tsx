@@ -1,20 +1,24 @@
-import React from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
-interface Props {
+export default function ProtectedRoute({
+  children,
+}: {
   children: React.ReactNode;
-}
+}) {
+  const [isClient, setIsClient] = useState(false);
+  const router = useRouter();
 
-const ProtectedRoute: React.FC<Props> = ({ children }) => {
-  const token = localStorage.getItem("token");
+  useEffect(() => {
+    setIsClient(true);
 
-  if (!token) {
-    if (typeof window !== "undefined") {
-      window.location.href = "/auth/login";
+    const token = localStorage.getItem("token");
+    if (!token) {
+      router.push("/auth/login");
     }
-    return null;
-  }
+  }, [router]);
+
+  if (!isClient) return null; // prevent SSR rendering
 
   return <>{children}</>;
-};
-
-export default ProtectedRoute;
+}

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
+import DepartmentsManagement from "./ManageDepartments";
 
 export default function AdminDashboard() {
   const router = useRouter();
@@ -76,21 +77,21 @@ export default function AdminDashboard() {
           </li>
 
           <li
-            onClick={() => router.push("/admin/departments")}
+            onClick={() => router.push("/admin/ManageDepartments")}
             className="p-3 hover:bg-gray-200 rounded cursor-pointer"
           >
             Departments
           </li>
 
           <li
-            onClick={() => router.push("/admin/studentManagments")}
+            onClick={() => router.push("/admin/studentManagment")}
             className="p-3 hover:bg-gray-200 rounded cursor-pointer"
           >
             Students
           </li>
 
           <li
-            onClick={() => router.push("/admin/requests")}
+            onClick={() => router.push("/admin/analytics")}
             className="p-3 hover:bg-gray-200 rounded cursor-pointer"
           >
             Clearance Requests

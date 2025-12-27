@@ -1,59 +1,147 @@
-[00:00:02.527] Server  LOG     ✓ Ready in 2.2s
-[00:00:02.597] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:00:02.608] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:00:05.038] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:00:05.046] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
-[00:00:05.631] Server  LOG     ○ Compiling / ...
-[00:00:06.548] Server  LOG     API URL: "http://localhost:5000"
-[00:00:08.643] Browser LOG     API URL: http://localhost:5000
-[00:00:09.245] Browser LOG     API URL: http://localhost:5000
-[00:00:10.843] Browser LOG     API URL: http://localhost:5000
-[00:00:11.338] Browser LOG     API URL: http://localhost:5000
-[00:00:13.311] Browser LOG     API URL: http://localhost:5000
-[00:00:13.311] Browser LOG     API URL: http://localhost:5000
-[00:00:13.513] Browser LOG     API URL: http://localhost:5000
-[00:00:13.997] Browser LOG     API URL: http://localhost:5000
-[00:00:14.556] Browser LOG     API URL: http://localhost:5000
-[00:00:14.847] Browser LOG     API URL: http://localhost:5000
-[00:00:15.006] Browser LOG     API URL: http://localhost:5000
-[00:00:15.308] Browser LOG     API URL: http://localhost:5000
-[00:00:15.524] Browser LOG     API URL: http://localhost:5000
-[00:00:16.012] Browser LOG     API URL: http://localhost:5000
-[00:00:16.302] Browser LOG     API URL: http://localhost:5000
-[00:00:16.302] Browser LOG     API URL: http://localhost:5000
-[00:00:16.531] Browser LOG     API URL: http://localhost:5000
-[00:00:16.916] Browser LOG     API URL: http://localhost:5000
-[00:00:17.161] Browser LOG     API URL: http://localhost:5000
-[00:00:17.615] Browser LOG     API URL: http://localhost:5000
-[00:00:18.187] Browser LOG     API URL: http://localhost:5000
-[00:00:18.766] Browser LOG     API URL: http://localhost:5000
-[00:00:19.199] Browser LOG     API URL: http://localhost:5000
-[00:00:19.399] Browser LOG     API URL: http://localhost:5000
-[00:00:19.581] Browser LOG     API URL: http://localhost:5000
-[00:00:20.438] Browser LOG     API URL: http://localhost:5000
-[00:00:20.684] Browser LOG     API URL: http://localhost:5000
-[00:00:21.163] Browser LOG     API URL: http://localhost:5000
-[00:00:21.351] Browser LOG     API URL: http://localhost:5000
-[00:00:21.548] Browser LOG     API URL: http://localhost:5000
-[00:00:25.527] Browser LOG     API URL: http://localhost:5000
-[00:00:26.172] Browser LOG     API URL: http://localhost:5000
-[00:00:26.670] Browser LOG     API URL: http://localhost:5000
-[00:00:27.493] Browser LOG     API URL: http://localhost:5000
-[00:00:27.717] Browser LOG     API URL: http://localhost:5000
-[00:00:28.275] Browser LOG     API URL: http://localhost:5000
-[00:00:28.925] Browser LOG     API URL: http://localhost:5000
-[00:00:29.203] Browser LOG     API URL: http://localhost:5000
-[00:00:29.469] Browser LOG     API URL: http://localhost:5000
-[00:00:29.888] Browser LOG     API URL: http://localhost:5000
-[00:00:30.192] Browser LOG     API URL: http://localhost:5000
-[00:00:30.864] Browser LOG     API URL: http://localhost:5000
-[00:00:31.241] Browser LOG     API URL: http://localhost:5000
-[00:00:31.845] Browser LOG     API URL: http://localhost:5000
-[00:00:32.038] Browser LOG     API URL: http://localhost:5000
-[00:00:32.350] Browser LOG     API URL: http://localhost:5000
-[00:00:33.696] Browser LOG     API URL: http://localhost:5000
-[00:00:34.694] Browser LOG     {}
-[00:00:47.046] Browser LOG     {}
-[00:02:35.351] Browser LOG     {}
-[00:03:04.744] Browser LOG     {}
-[00:03:10.675] Browser LOG     {}
+[00:00:05.088] Server  LOG     ✓ Ready in 4.7s
+[00:00:05.136] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:00:07.068] Server  WARN    ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:00:20.268] Server  LOG     API URL: "http://localhost:5000"
+[00:00:21.720] Browser LOG     API URL: http://localhost:5000
+[00:00:21.884] Browser LOG     API URL: http://localhost:5000
+[00:00:24.115] Browser LOG     API URL: http://localhost:5000
+[00:00:24.115] Browser LOG     API URL: http://localhost:5000
+[00:00:24.331] Browser LOG     API URL: http://localhost:5000
+[00:00:24.633] Browser LOG     API URL: http://localhost:5000
+[00:00:25.085] Browser LOG     API URL: http://localhost:5000
+[00:00:25.372] Browser LOG     API URL: http://localhost:5000
+[00:00:25.517] Browser LOG     API URL: http://localhost:5000
+[00:00:25.791] Browser LOG     API URL: http://localhost:5000
+[00:00:26.025] Browser LOG     API URL: http://localhost:5000
+[00:00:26.619] Browser LOG     API URL: http://localhost:5000
+[00:00:26.897] Browser LOG     API URL: http://localhost:5000
+[00:00:26.897] Browser LOG     API URL: http://localhost:5000
+[00:00:27.109] Browser LOG     API URL: http://localhost:5000
+[00:00:27.407] Browser LOG     API URL: http://localhost:5000
+[00:00:27.640] Browser LOG     API URL: http://localhost:5000
+[00:00:28.070] Browser LOG     API URL: http://localhost:5000
+[00:00:28.591] Browser LOG     API URL: http://localhost:5000
+[00:00:29.144] Browser LOG     API URL: http://localhost:5000
+[00:00:29.482] Browser LOG     API URL: http://localhost:5000
+[00:00:29.665] Browser LOG     API URL: http://localhost:5000
+[00:00:29.834] Browser LOG     API URL: http://localhost:5000
+[00:00:30.300] Browser LOG     API URL: http://localhost:5000
+[00:00:30.547] Browser LOG     API URL: http://localhost:5000
+[00:00:30.769] Browser LOG     API URL: http://localhost:5000
+[00:00:30.956] Browser LOG     API URL: http://localhost:5000
+[00:00:31.142] Browser LOG     API URL: http://localhost:5000
+[00:00:33.390] Browser LOG     API URL: http://localhost:5000
+[00:00:33.679] Browser LOG     API URL: http://localhost:5000
+[00:00:34.124] Browser LOG     API URL: http://localhost:5000
+[00:00:34.124] Browser LOG     API URL: http://localhost:5000
+[00:00:34.769] Browser LOG     API URL: http://localhost:5000
+[00:00:35.104] Browser LOG     API URL: http://localhost:5000
+[00:00:35.267] Browser LOG     API URL: http://localhost:5000
+[00:00:35.416] Browser LOG     API URL: http://localhost:5000
+[00:00:36.467] Browser LOG     API URL: http://localhost:5000
+[00:00:36.987] Browser LOG     API URL: http://localhost:5000
+[00:00:37.499] Browser LOG     API URL: http://localhost:5000
+[00:00:38.255] Browser LOG     API URL: http://localhost:5000
+[00:00:38.513] Browser LOG     API URL: http://localhost:5000
+[00:00:38.941] Browser LOG     API URL: http://localhost:5000
+[00:00:39.566] Browser LOG     API URL: http://localhost:5000
+[00:00:39.882] Browser LOG     API URL: http://localhost:5000
+[00:00:40.150] Browser LOG     API URL: http://localhost:5000
+[00:00:40.539] Browser LOG     API URL: http://localhost:5000
+[00:00:40.815] Browser LOG     API URL: http://localhost:5000
+[00:00:41.401] Browser LOG     API URL: http://localhost:5000
+[00:00:41.684] Browser LOG     API URL: http://localhost:5000
+[00:00:42.106] Browser LOG     API URL: http://localhost:5000
+[00:00:42.287] Browser LOG     API URL: http://localhost:5000
+[00:00:42.573] Browser LOG     API URL: http://localhost:5000
+[00:00:43.929] Browser LOG     API URL: http://localhost:5000
+[00:00:44.709] Browser LOG     {}
+[00:00:47.345] Browser ERROR   unhandledRejection: AxiosError: Request failed with status code 404
+[00:00:54.501] Browser LOG     {}
+[00:00:56.450] Browser ERROR   Failed to fetch students: {"code":"ERR_BAD_REQUEST","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"env":{},"headers":{"Accept":"application/json, text/plain, */*"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"/users/getAllUsers","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 404","name":"AxiosError","stack":"AxiosError: Request failed with status code 404\n    at settle (webpack-internal:///(pages-dir-browser)/./node_modules/axios/lib/core/settle.js:24:12)\n    at XMLHttpRequest.onloadend (webpack-internal:///(pages-dir-browser)/./node_modules/axios/lib/adapters/xhr.js:73:66)\n    at Axios.request (webpack-internal:///(pages-dir-browser)/./node_modules/axios/lib/core/Axios.js:57:41)","status":404}
+[00:00:56.450] Browser ERROR   Failed to fetch departments: {"code":"ERR_BAD_REQUEST","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"env":{},"headers":{"Accept":"application/json, text/plain, */*"},"maxBodyLength":-1,"maxContentLength":-1,"method":"get","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"/department/getAllDepartments","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 404","name":"AxiosError","stack":"AxiosError: Request failed with status code 404\n    at settle (webpack-internal:///(pages-dir-browser)/./node_modules/axios/lib/core/settle.js:24:12)\n    at XMLHttpRequest.onloadend (webpack-internal:///(pages-dir-browser)/./node_modules/axios/lib/adapters/xhr.js:73:66)\n    at Axios.request (webpack-internal:///(pages-dir-browser)/./node_modules/axios/lib/core/Axios.js:57:41)","status":404}
+[00:01:45.474] Browser ERROR   Failed to add student: {"code":"ERR_BAD_REQUEST","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"data":"{\"name\":\"tesfaye\",\"email\":\"tesfayetesema@gmail.com\",\"password\":\"12345678\",\"departmentId\":\"\"}","env":{},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json"},"maxBodyLength":-1,"maxContentLength":-1,"method":"post","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"/auth/createUserByAdmin","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 404","name":"AxiosError","stack":"AxiosError: Request failed with status code 404\n    at settle (webpack-internal:///(pages-dir-browser)/./node_modules/axios/lib/core/settle.js:24:12)\n    at XMLHttpRequest.onloadend (webpack-internal:///(pages-dir-browser)/./node_modules/axios/lib/adapters/xhr.js:73:66)\n    at Axios.request (webpack-internal:///(pages-dir-browser)/./node_modules/axios/lib/core/Axios.js:57:41)","status":404}
+[00:01:47.541] Browser ERROR   Failed to add student: {"code":"ERR_BAD_REQUEST","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"data":"{\"name\":\"tesfaye\",\"email\":\"tesfayetesema@gmail.com\",\"password\":\"12345678\",\"departmentId\":\"\"}","env":{},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json"},"maxBodyLength":-1,"maxContentLength":-1,"method":"post","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"/auth/createUserByAdmin","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 404","name":"AxiosError","stack":"AxiosError: Request failed with status code 404\n    at settle (webpack-internal:///(pages-dir-browser)/./node_modules/axios/lib/core/settle.js:24:12)\n    at XMLHttpRequest.onloadend (webpack-internal:///(pages-dir-browser)/./node_modules/axios/lib/adapters/xhr.js:73:66)\n    at Axios.request (webpack-internal:///(pages-dir-browser)/./node_modules/axios/lib/core/Axios.js:57:41)","status":404}
+[00:01:48.472] Browser ERROR   Failed to add student: {"code":"ERR_BAD_REQUEST","config":{"adapter":["xhr","http","fetch"],"allowAbsoluteUrls":true,"data":"{\"name\":\"tesfaye\",\"email\":\"tesfayetesema@gmail.com\",\"password\":\"12345678\",\"departmentId\":\"\"}","env":{},"headers":{"Accept":"application/json, text/plain, */*","Content-Type":"application/json"},"maxBodyLength":-1,"maxContentLength":-1,"method":"post","timeout":0,"transformRequest":[null],"transformResponse":[null],"transitional":{"clarifyTimeoutError":false,"forcedJSONParsing":true,"silentJSONParsing":true},"url":"/auth/createUserByAdmin","xsrfCookieName":"XSRF-TOKEN","xsrfHeaderName":"X-XSRF-TOKEN"},"message":"Request failed with status code 404","name":"AxiosError","stack":"AxiosError: Request failed with status code 404\n    at settle (webpack-internal:///(pages-dir-browser)/./node_modules/axios/lib/core/settle.js:24:12)\n    at XMLHttpRequest.onloadend (webpack-internal:///(pages-dir-browser)/./node_modules/axios/lib/adapters/xhr.js:73:66)\n    at Axios.request (webpack-internal:///(pages-dir-browser)/./node_modules/axios/lib/core/Axios.js:57:41)","status":404}
+[00:02:06.322] Browser LOG     {}
+[00:02:07.408] Browser LOG     API URL: http://localhost:5000
+[00:06:22.163] Browser LOG     API URL: http://localhost:5000
+[00:06:22.328] Browser LOG     API URL: http://localhost:5000
+[00:06:22.552] Browser LOG     API URL: http://localhost:5000
+[00:06:22.808] Browser LOG     API URL: http://localhost:5000
+[00:06:23.442] Browser LOG     API URL: http://localhost:5000
+[00:06:23.831] Browser LOG     API URL: http://localhost:5000
+[00:06:24.004] Browser LOG     API URL: http://localhost:5000
+[00:06:24.311] Browser LOG     API URL: http://localhost:5000
+[00:06:24.536] Browser LOG     API URL: http://localhost:5000
+[00:06:24.863] Browser LOG     API URL: http://localhost:5000
+[00:06:25.006] Browser LOG     API URL: http://localhost:5000
+[00:06:25.169] Browser LOG     API URL: http://localhost:5000
+[00:06:25.374] Browser LOG     API URL: http://localhost:5000
+[00:06:25.650] Browser LOG     API URL: http://localhost:5000
+[00:06:25.906] Browser LOG     API URL: http://localhost:5000
+[00:06:26.397] Browser LOG     API URL: http://localhost:5000
+[00:06:26.856] Browser LOG     API URL: http://localhost:5000
+[00:06:27.263] Browser LOG     API URL: http://localhost:5000
+[00:06:27.847] Browser LOG     API URL: http://localhost:5000
+[00:06:28.305] Browser LOG     API URL: http://localhost:5000
+[00:06:28.807] Browser LOG     API URL: http://localhost:5000
+[00:06:29.369] Browser LOG     API URL: http://localhost:5000
+[00:06:29.676] Browser LOG     API URL: http://localhost:5000
+[00:06:29.892] Browser LOG     API URL: http://localhost:5000
+[00:06:30.048] Browser LOG     API URL: http://localhost:5000
+[00:06:30.299] Browser LOG     API URL: http://localhost:5000
+[00:06:30.639] Browser LOG     API URL: http://localhost:5000
+[00:06:30.873] Browser LOG     API URL: http://localhost:5000
+[00:06:31.037] Browser LOG     API URL: http://localhost:5000
+[00:06:31.261] Browser LOG     API URL: http://localhost:5000
+[00:06:34.525] Browser LOG     API URL: http://localhost:5000
+[00:06:34.860] Browser LOG     API URL: http://localhost:5000
+[00:06:35.280] Browser LOG     API URL: http://localhost:5000
+[00:06:35.842] Browser LOG     API URL: http://localhost:5000
+[00:06:36.049] Browser LOG     API URL: http://localhost:5000
+[00:06:36.507] Browser LOG     API URL: http://localhost:5000
+[00:06:36.732] Browser LOG     API URL: http://localhost:5000
+[00:06:36.915] Browser LOG     API URL: http://localhost:5000
+[00:06:37.140] Browser LOG     API URL: http://localhost:5000
+[00:06:37.446] Browser LOG     API URL: http://localhost:5000
+[00:06:37.683] Browser LOG     API URL: http://localhost:5000
+[00:06:38.174] Browser LOG     API URL: http://localhost:5000
+[00:06:38.511] Browser LOG     API URL: http://localhost:5000
+[00:06:38.889] Browser LOG     API URL: http://localhost:5000
+[00:06:39.187] Browser LOG     API URL: http://localhost:5000
+[00:06:40.722] Browser LOG     API URL: http://localhost:5000
+[00:06:41.645] Browser LOG     API URL: http://localhost:5000
+[00:06:41.645] Browser LOG     API URL: http://localhost:5000
+[00:06:41.645] Browser LOG     API URL: http://localhost:5000
+[00:06:41.645] Browser LOG     API URL: http://localhost:5000
+[00:06:41.645] Browser LOG     API URL: http://localhost:5000
+[00:06:41.645] Browser LOG     API URL: http://localhost:5000
+[00:06:41.645] Browser LOG     API URL: http://localhost:5000
+[00:06:41.645] Browser LOG     API URL: http://localhost:5000
+[00:06:41.645] Browser LOG     API URL: http://localhost:5000
+[00:06:41.645] Browser LOG     API URL: http://localhost:5000
+[00:06:41.645] Browser LOG     API URL: http://localhost:5000
+[00:06:41.645] Browser LOG     API URL: http://localhost:5000
+[00:06:41.645] Browser LOG     API URL: http://localhost:5000
+[00:06:41.646] Browser LOG     API URL: http://localhost:5000
+[00:06:42.970] Browser LOG     API URL: http://localhost:5000
+[00:06:43.336] Browser LOG     API URL: http://localhost:5000
+[00:06:43.654] Browser LOG     API URL: http://localhost:5000
+[00:06:44.279] Browser LOG     API URL: http://localhost:5000
+[00:06:44.553] Browser LOG     API URL: http://localhost:5000
+[00:06:45.075] Browser LOG     API URL: http://localhost:5000
+[00:06:45.710] Browser LOG     API URL: http://localhost:5000
+[00:06:46.047] Browser LOG     API URL: http://localhost:5000
+[00:06:46.303] Browser LOG     API URL: http://localhost:5000
+[00:06:46.639] Browser LOG     API URL: http://localhost:5000
+[00:06:46.897] Browser LOG     API URL: http://localhost:5000
+[00:06:47.397] Browser LOG     API URL: http://localhost:5000
+[00:06:47.705] Browser LOG     API URL: http://localhost:5000
+[00:06:48.021] Browser LOG     API URL: http://localhost:5000
+[00:06:48.258] Browser LOG     API URL: http://localhost:5000
+[00:06:48.492] Browser LOG     API URL: http://localhost:5000
+[00:06:55.094] Browser LOG     API URL: http://localhost:5000
+[00:06:55.201] Browser LOG     {}
+[00:10:39.266] Browser ERROR   unhandledRejection: AxiosError: Request failed with status code 404
+[00:11:15.720] Browser LOG     {}

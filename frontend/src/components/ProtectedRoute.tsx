@@ -18,7 +18,6 @@ export default function ProtectedRoute({
     }
   }, [router]);
 
-  if (!isClient) return null; // prevent SSR rendering
-
+  if (!isClient) return null;
   return <>{children}</>;
 }

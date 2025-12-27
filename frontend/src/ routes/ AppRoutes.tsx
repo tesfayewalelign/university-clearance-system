@@ -11,6 +11,7 @@ import TrackStatus from "../../pages/student/TrackStatus";
 import AdminDashboard from "../../pages/admin/dashboard";
 import StudentsManagement from "../../pages/admin/studentManagment";
 import EditDepartment from "../../pages/admin/departmentById";
+import DepartmentsManagement from "../../pages/admin/ManageDepartments";
 
 export default function AppRoutes() {
   const [role, setRole] = useState<string | null>(null);

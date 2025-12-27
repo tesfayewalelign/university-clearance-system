@@ -23,7 +23,7 @@ export default function EditDepartment({ params }: any) {
       return;
     }
 
-    if (role !== "admin") {
+    if (role !== "ADMIN" && role !== "SUPER_ADMIN") {
       router.push("/");
       return;
     }

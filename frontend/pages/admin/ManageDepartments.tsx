@@ -147,7 +147,6 @@ export default function DepartmentsManagement() {
         </Modal>
       )}
 
-      {/* DELETE MODAL */}
       {deleteModalOpen && (
         <Modal
           title="Delete Department?"

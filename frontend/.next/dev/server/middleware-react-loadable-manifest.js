@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{}"
+self.__REACT_LOADABLE_MANIFEST="{\"pages/admin/analytics.tsx -> recharts\":{\"id\":\"pages/admin/analytics.tsx -> recharts\",\"files\":[\"static/chunks/_pages-dir-browser_node_modules_recharts_es6_cartesian_Bar_js-_pages-dir-browser_node_modules-ecce36.js\"]}}"

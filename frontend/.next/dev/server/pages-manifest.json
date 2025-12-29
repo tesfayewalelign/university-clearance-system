@@ -2,8 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js",
   "/admin/dashboard": "pages/admin/dashboard.js",
+  "/": "pages/index.js",
   "/admin/ManageDepartments": "pages/admin/ManageDepartments.js",
-  "/admin/studentManagment": "pages/admin/studentManagment.js"
+  "/admin/analytics": "pages/admin/analytics.js"
 }

@@ -97,3 +97,17 @@
 [31mCan't reach database server at `localhost:3306`[39m
 
 [31mPlease make sure your database server is running at `localhost:3306`.[39m
+[2025-12-28 23:35:08] [31merror[39m: [31m Failed to connect to the database: [39m
+[31mInvalid `prisma.$queryRaw()` invocation:[39m
+
+
+[31mCan't reach database server at `localhost:3306`[39m
+
+[31mPlease make sure your database server is running at `localhost:3306`.[39m
+[2025-12-28 23:35:38] [31merror[39m: [31m Failed to connect to the database: [39m
+[31mInvalid `prisma.$queryRaw()` invocation:[39m
+
+
+[31mCan't reach database server at `localhost:3306`[39m
+
+[31mPlease make sure your database server is running at `localhost:3306`.[39m

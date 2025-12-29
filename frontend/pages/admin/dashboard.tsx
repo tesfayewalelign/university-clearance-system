@@ -5,6 +5,19 @@ import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
 import DepartmentsManagement from "./ManageDepartments";
 
+interface ClearanceRequest {
+  id: number;
+  overallStatus: "Pending" | "Approved" | "Rejected";
+  student: {
+    full_name: string;
+  };
+  departmentStatuses: {
+    department: {
+      name: string;
+    };
+  }[];
+}
+
 export default function AdminDashboard() {
   const router = useRouter();
   const [loading, setLoading] = useState(true);
@@ -38,30 +51,41 @@ export default function AdminDashboard() {
       const res = await fetch(
         `${process.env.NEXT_PUBLIC_API_URL}/admin/clearanceRequests`,
         {
-          headers: { Authorization: `Bearer ${token}` },
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
 
-      const data = await res.json();
+      const result = await res.json();
 
-      setRequests(data);
+      const requestsArray = result.data;
+
+      setRequests(requestsArray);
 
       const statsCalc = {
-        total: data.length,
-        pending: data.filter((r: any) => r.status === "pending").length,
-        approved: data.filter((r: any) => r.status === "approved").length,
-        rejected: data.filter((r: any) => r.status === "rejected").length,
+        total: requestsArray.length,
+        pending: requestsArray.filter((r: any) => r.overallStatus === "Pending")
+          .length,
+        approved: requestsArray.filter(
+          (r: any) => r.overallStatus === "Approved"
+        ).length,
+        rejected: requestsArray.filter(
+          (r: any) => r.overallStatus === "Rejected"
+        ).length,
       };
 
       setStats(statsCalc);
       setLoading(false);
     } catch (error) {
-      console.log(error);
+      console.error(error);
       setLoading(false);
     }
   };
 
-  if (loading) return <p className="p-10">Loading...</p>;
+  if (loading) {
+    return <div className="p-10 text-gray-500">Loading admin dashboard...</div>;
+  }
 
   return (
     <div className="flex min-h-screen bg-gray-100">
@@ -95,6 +119,12 @@ export default function AdminDashboard() {
             className="p-3 hover:bg-gray-200 rounded cursor-pointer"
           >
             Clearance Requests
+          </li>
+          <li
+            onClick={() => router.push("/admin/analytics")}
+            className="p-3 hover:bg-gray-200 rounded cursor-pointer"
+          >
+            Analaytics
           </li>
 
           <li
@@ -145,20 +175,22 @@ export default function AdminDashboard() {
                 <th className="p-3 text-left">Action</th>
               </tr>
             </thead>
-
             <tbody>
-              {requests.slice(0, 8).map((req: any, index: number) => (
-                <tr key={index} className="border-b">
-                  <td className="p-3">{req.studentName}</td>
-                  <td className="p-3">{req.department}</td>
-                  <td className="p-3 capitalize">{req.status}</td>
+              {requests.slice(0, 8).map((req: any) => (
+                <tr key={req.id} className="border-b">
                   <td className="p-3">
-                    <button
-                      onClick={() => router.push(`/admin/requests/${req._id}`)}
-                      className="text-blue-600 underline"
+                    <span
+                      className={`px-3 py-1 rounded-full text-sm font-semibold
+      ${
+        req.overallStatus === "Approved"
+          ? "bg-green-100 text-green-700"
+          : req.overallStatus === "Pending"
+          ? "bg-yellow-100 text-yellow-700"
+          : "bg-red-100 text-red-700"
+      }`}
                     >
-                      View
-                    </button>
+                      {req.overallStatus}
+                    </span>
                   </td>
                 </tr>
               ))}
